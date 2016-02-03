@@ -1,4 +1,5 @@
 class ChallengesController < ApplicationController
+  
   def index
     @challenges = Challenge.all
   end
@@ -18,16 +19,22 @@ class ChallengesController < ApplicationController
   end
 
   def edit
+    @challenge = Challenge.find(params[:id])
   end
+
   def show
+    @challenge = Challenge.find(params[:id])
   end
 
   def destroy
   end
 
-  def edit
-  end
-
   def update
   end
+
+  private
+  def challenge_params
+    params.require(:challenge).permit(:course_id,:title,:instructions,:lesson,:problem,:answer,:hints)
+  end
+
 end
