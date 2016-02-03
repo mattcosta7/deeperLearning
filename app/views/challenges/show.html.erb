@@ -1,5 +1,11 @@
-<h1>Challenges#show</h1>
-<p>Find me in app/views/challenges/show.html.erb</p>
+
+  <h3><%=@challenge.course.name%></h3>
+  <h4><%= @challenge.title%></h4>
+  <h4><%= @challenge.lesson%></h4>
+  <h4><%= @challenge.problem%></h4>
+  <h4><%= @challenge.instructions%></h4>
+  <h4><%= @challenge.hints%></h4>
+    <span id='answer'><%=@challenge.answer%></span>
 <div id="editor">
     
 </div>

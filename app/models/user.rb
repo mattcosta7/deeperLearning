@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :courses
   has_many :completions
   
+  mount_uploader :avatar, AvatarUploader
   
   validates :name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -13,7 +14,6 @@ class User < ActiveRecord::Base
   
   has_many :completions, foreign_key: :completer_id
   has_many :completed, through: :completions, source: :completed
-
 
   def downcase_email
     self.email = email.downcase

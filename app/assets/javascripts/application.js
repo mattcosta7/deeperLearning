@@ -17,7 +17,7 @@
 
 function checkForm(){
   var val = editor.getValue().trim();
-  if(val == 'var num = 1;'){
+  if(val == document.getElementById('answer').innerHTML){
     console.log("You didn't screw up");
   }
   else
