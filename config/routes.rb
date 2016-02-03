@@ -1,53 +1,10 @@
 Rails.application.routes.draw do
-  get 'courses/index'
 
-  get 'courses/new'
-
-  get 'courses/edit'
-
-  get 'courses/create'
-
-  get 'courses/show'
-
-  get 'courses/destroy'
-
-  get 'courses/update'
-
-  get 'sessions/create'
-
-  get 'sessions/new'
-
-  get 'sessions/destroy'
-
-  get 'challenges/index'
-
-  get 'challenges/new'
-
-  get 'challenges/create'
-
-  get 'challenges/edit'
-
-  get 'challenges/show'
-
-  get 'challenges/destroy'
-
-  get 'challenges/edit'
-
-  get 'users/index'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/edit'
-
-  get 'users/show'
-
-  get 'users/destroy'
-
-  get 'users/edit'
-
-  get 'home/home'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+  resources :users,:challenges,:courses
+  root 'home#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
