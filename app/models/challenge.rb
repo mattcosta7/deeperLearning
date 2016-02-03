@@ -2,7 +2,6 @@ class Challenge < ActiveRecord::Base
   belongs_to :course
 
   validates :course_id, presence: true
-  validates :names, presence: true
   validates :title, presence: true
   validates :instructions, presence: true
   validates :lesson, presence: true
