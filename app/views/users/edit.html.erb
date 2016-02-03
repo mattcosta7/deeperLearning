@@ -1,14 +1,14 @@
 <h2>Edit User</h2>
-
-<%= form_for(@user) do |f| %>
+  <%=image_tag(@user.avatar)%>
+<%= form_for(@user,:html => { :multipart => true } ) do |f| %>
+  <%= f.file_field :avatar %>
   <%= f.text_field :name, :placeholder => "Name" %>
   <%= f.text_field :email, :placeholder => "Email" %>
-  <%= f.text_field :location, :placeholder => "Email" %>
-  <%= f.date_select :birthday, :placeholder => "Email" %>
-  <%= f.text_area :hobbies, :placeholder => "Email" %>
-  
+  <%= f.text_field :location, :placeholder => "location" %>
+  <%= f.date_select :birthday, :placeholder => "birthday" %>
+  <%= f.text_area :hobbies, :placeholder => "hobbies" %>
   <%= f.password_field :new_password, :placeholder => "Current Password" %>
   <%= f.password_field :password, :placeholder => "New Password" %>
   <%= f.password_field :password_confirmation, :placeholder => "Confirm New Password" %>
-  <%= f.submit "Create Account" %>
+  <%= f.submit "Update Account" %>
 <% end %>
