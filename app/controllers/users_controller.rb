@@ -29,11 +29,10 @@ class UsersController < ApplicationController
   def edit
   end
 
-<<<<<<< HEAD
   def user_params
     params.require(:user).permit(:name, :password_digest, :location, :birthday, :hobbies, :email)
-=======
+  end
+
   def update
->>>>>>> 2e320524fe5f55b84e2687cd09846530b6befe69
   end
 end
