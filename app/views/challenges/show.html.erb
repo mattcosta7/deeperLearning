@@ -1,4 +1,4 @@
-
+<div class='wrap'>
   <h3><%=@challenge.course.name%></h3>
   <h4><%= @challenge.title%></h4>
   <h4><%= @challenge.lesson%></h4>
@@ -10,7 +10,12 @@
     
 </div>
 <button onclick="checkForm()">submit</button>
-
+<% if Challenge.exists?(@challenge.id+1) %>
+<%=link_to("Next Challenge", course_challenge_path(@challenge.course,(@challenge.id + 1)), id: "nextLink")%>
+<%else%>
+<%=link_to("Completed All Courses", user_path(current_user), id: "nextLink")%>
+<%end%>
+</div>
     
 <script>
     var editor = ace.edit("editor");

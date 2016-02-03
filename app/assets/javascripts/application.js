@@ -15,10 +15,14 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(document).ready(function(){
+  $('#nextLink').hide();
+})
+
 function checkForm(){
   var val = editor.getValue().trim();
   if(val == document.getElementById('answer').innerHTML){
-    console.log("You didn't screw up");
+    $('#nextLink').show();
   }
   else
     console.log("Angry Jon");
