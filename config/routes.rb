@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'courses/index'
+
+  get 'courses/new'
+
+  get 'courses/edit'
+
+  get 'courses/create'
+
+  get 'courses/show'
+
+  get 'courses/destroy'
+
+  get 'courses/update'
+
   get 'sessions/create'
 
   get 'sessions/new'

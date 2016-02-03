@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function checkForm(){
+  var val = editor.getValue().trim();
+  if(val == 'var num = 1;'){
+    console.log("You didn't screw up");
+  }
+  else
+    console.log("Angry Jon");
+  return false;
+}
