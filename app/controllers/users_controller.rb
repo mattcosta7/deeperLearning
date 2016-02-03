@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.save
-        console.log("Erin is better than Matt.")
+        flash[:alert] = "Erin is better than Matt."
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
       else
-        consolelog("Matt is not as cool as Erin.")
+        flash[:alert] = "Matt is not as cool as Erin."
       end
   end
 
