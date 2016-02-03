@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.where(email: params[:email]).first
-    if @user
+    params.inspect
+    @user = User.where(email: params[:session][:email]).first
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.user_id
       flash[:notice] = "Signed in"
       redirect_to user_path(@user)
