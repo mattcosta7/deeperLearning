@@ -4,7 +4,7 @@
 
 <h2>Sign Up</h2>
 
-<%= form_for(@user, new_user_path), :class => "nu-form" do f %>
+<%= form_for(@user) do |f| %>
 	<%= f.text_field :name %>
 	<%= f.text_field :email %>
 	<%= f.password_field :password_digest %>
