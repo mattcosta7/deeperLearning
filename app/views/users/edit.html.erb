@@ -1,2 +1,14 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h2>Edit User</h2>
+
+<%= form_for(@user) do |f| %>
+  <%= f.text_field :name, :placeholder => "Name" %>
+  <%= f.text_field :email, :placeholder => "Email" %>
+  <%= f.text_field :location, :placeholder => "Email" %>
+  <%= f.date_select :birthday, :placeholder => "Email" %>
+  <%= f.text_area :hobbies, :placeholder => "Email" %>
+  
+  <%= f.password_field :new_password, :placeholder => "Current Password" %>
+  <%= f.password_field :password, :placeholder => "New Password" %>
+  <%= f.password_field :password_confirmation, :placeholder => "Confirm New Password" %>
+  <%= f.submit "Create Account" %>
+<% end %>

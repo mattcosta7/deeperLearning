@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def new
@@ -21,8 +22,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @users = User.all
+    @user = User.find_by_name(params[:id])
   end
 
   def destroy

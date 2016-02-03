@@ -1,2 +1,14 @@
 <h1>Challenges#show</h1>
 <p>Find me in app/views/challenges/show.html.erb</p>
+<div id="editor">
+    
+</div>
+<button onclick="checkForm()">submit</button>
+
+    
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/tomorrow_night_blue");
+    editor.getSession().setMode("ace/mode/javascript");
+    editor.getSession().setUseWrapMode(true);
+</script>
