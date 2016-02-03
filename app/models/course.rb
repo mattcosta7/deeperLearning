@@ -3,4 +3,8 @@ class Course < ActiveRecord::Base
   belongs_to :user
 
   validates :names, presence: true
+
+  def to_param
+    name
+  end
 end

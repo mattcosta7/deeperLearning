@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :password_digest, :location, :birthday, :hobbies, :email)
+    params.require(:user).permit(:name, :password, :password_confirmation, :location, :birthday, :hobbies, :email)
   end
 
   def update
