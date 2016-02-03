@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav>
+		<ul>
+			<li><%= link_to "Deeper Learing", user_path(@user) %></li>
+			<li><%= link_to "Sign Out", logout_path %></li>
+			<li><%= link_to "Edit Account", edit_user_path %></li>
+		</ul>
+	</nav>
 <%= flash[:notice] if flash[:notice] %>
 <%= yield %>
 
