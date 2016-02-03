@@ -1,4 +1,40 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/new'
+
+  get 'sessions/destroy'
+
+  get 'challenges/index'
+
+  get 'challenges/new'
+
+  get 'challenges/create'
+
+  get 'challenges/edit'
+
+  get 'challenges/show'
+
+  get 'challenges/destroy'
+
+  get 'challenges/edit'
+
+  get 'users/index'
+
+  get 'users/new'
+
+  get 'users/create'
+
+  get 'users/edit'
+
+  get 'users/show'
+
+  get 'users/destroy'
+
+  get 'users/edit'
+
+  get 'home/home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
