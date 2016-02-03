@@ -8,9 +8,11 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    @course = Course.find(params[:id])
   end
 
   def create
+    @course = Course.new(course_params)
   end
 
   def show
@@ -21,5 +23,11 @@ class CoursesController < ApplicationController
   end
 
   def update
+    @course = Course.find(params[:id])
+  end
+
+  private
+  def course_params
+    params.require(:course).permit(:names)
   end
 end
