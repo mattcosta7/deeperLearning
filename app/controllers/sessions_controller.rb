@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
   def create
     params.inspect
     @user = User.where(email: params[:session][:email]).first
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.user_id
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
       flash[:notice] = "Signed in"
       redirect_to user_path(@user)
     else
