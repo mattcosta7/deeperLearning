@@ -5,8 +5,8 @@
 <h2>Sign Up</h2>
 
 <%= form_for(@user) do |f| %>
-	<%= f.text_field :name %>
-	<%= f.text_field :email %>
-	<%= f.password_field :password_digest %>
+	<%= f.text_field :name, :placeholder => "Name" %>
+	<%= f.text_field :email, :placeholder => "Email" %>
+	<%= f.password_field :password_digest, :placeholder => "Password" %>
 	<%= f.submit "Create Account" %>
 <% end %>
