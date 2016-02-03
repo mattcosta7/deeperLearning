@@ -1,0 +1,10 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<h1>Sign In</h1>
+<%= form_for(@user) do |f| %>
+	<%=f.text_field :email, :placeholder => "Email" %>
+	<%=f.password_field :password, :placeholder => "Password" %>
+	<%=f.password_field :password_confirmation, :placeholder => "Confrim Password" %>
+	<%=f.submit "Sign In" %>
+<% end %>
