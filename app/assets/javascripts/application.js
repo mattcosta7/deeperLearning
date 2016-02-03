@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ace-rails-ap
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 function checkForm(){
