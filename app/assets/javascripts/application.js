@@ -31,6 +31,7 @@ $(document).ready(function(){
 
    $('#hint-btn').on('click', function(){
    		$('#hint').show();
+   		$('#content-box').scrollTop(600);
    });
 
 })
