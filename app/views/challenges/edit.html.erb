@@ -1,2 +1,12 @@
-<h1>Challenges#edit</h1>
-<p>Find me in app/views/challenges/edit.html.erb</p>
+<h2>Edit a Challenge</h2>
+  <h3><%=@challenge.course.name%></h3>
+
+<%=form_for([@course,@challenge]) do |f| %>
+  <%=f.text_field :title, placeholder: "title"%>
+  <%=f.text_area :lesson, placeholder: "lesson"%>
+  <%=f.text_area :problem, placeholder: "problem"%>
+  <%=f.text_area :instructions, placeholder: "instructions"%>
+  <%=f.text_area :hints, placeholder: "hints"%>
+  <%=f.text_area :answer, placeholder: "answers"%>
+  <%=f.submit%>
+<%end%>

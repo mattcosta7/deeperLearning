@@ -4,15 +4,27 @@
 <%end%>
 <% if @user.completions.length > 0 %>
   <ul>
+  Completed:
   <% @user.completions.each do |comp| %>
     <% @challenge = Challenge.find(comp.completed_id) %>
     <li><%=link_to(@challenge.title, course_challenge_path(@challenge.course,@challenge))%></li>
   <%end%>
-
+  To Complete:
+  <% Challenge.all.each do |chal| %>
+    <% if !Completion.exists?(completer_id:current_user.id, completed_id: chal.id) %>
+      <%=link_to(chal.title, [chal.course,chal])%>
+    <%end%>
+  <%end%>
   </ul>
 <% else %>
-  <%=link_to("Take a class!",courses_path)%>
+  To Complete:
+  <% Challenge.all.each do |chal| %>
+    <% if !Completion.exists?(completer_id:current_user.id, completed_id: chal.id) %>
+      <%=link_to(chal.title, [chal.course,chal])%>
+    <%end%>
+  <%end%>
 <%end%>
+<%=link_to("Take a class!",courses_path)%>
 <!-- this is the user home page -->
 <!-- Welcome User Name -->
 <!-- User Image -->
