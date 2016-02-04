@@ -1,12 +1,18 @@
 <div class='wrap'>
-  <h3><%=@challenge.course.name%></h3>
-  <%=link_to "Edit Challenge", edit_course_challenge_path(@challenge.course, @challenge) if current_user.admin %>
-  <h4><%= @challenge.title%></h4>
-  <h4><%= @challenge.lesson.html_safe%></h4>
-  <h4><%= @challenge.problem%></h4>
-  <h4><%= @challenge.instructions%></h4>
-  <h4><%= @challenge.hints%></h4>
-  <span id='answer'><%=@challenge.answer%></span>
+
+  <div id="content-box" class="col-md-4">
+    <h2 id="crsname"><%=@challenge.course.name.html_safe%></h3>
+    <h4 id="chal-title"><%= @challenge.title.html_safe%></h4>
+      <div id="lesson-box" class="col-md-10">
+       <h5 id="chal-lesson"><%= @challenge.lesson.html_safe%></h5>
+      </div>
+      <div id="instruct-box" class="col-md-10">
+        <h5 id="chal-instruct"><%= @challenge.instructions.html_safe%></h5>
+        <h5 id="chal-problem"><%= @challenge.problem.html_safe%></h5>
+      <button onclick="hintFunc()" id="hint-btn" class="btn btn-primary"><%= @challenge.hints.html_safe%>Hint</button>
+    </div>
+    <span id='answer'><%=@challenge.answer%></span>
+  </div>
 
 <% if !current_user.completions.exists?(completed_id:params[:id]) %>
 <div id="editor"></div>
