@@ -10,11 +10,13 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.save
-        flash[:alert] = "Erin is better than Matt."
+        flash[:alert] = "Erin is not remotely better than Matt."
         session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        flash[:awesome]="Fill Out Some Info, so we can better assist you in your Epic Adventure"
+        redirect_to edit_user_path(@user)
       else
-        flash[:alert] = "Matt is not as cool as Erin."
+        flash[:alert] = "Erin is a failure!"
+        redirect_to :back
       end
   end
 

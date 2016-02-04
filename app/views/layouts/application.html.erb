@@ -18,6 +18,10 @@
 					<ul class="dropdown-menu">
 						<li><%= link_to("Sign Out", logout_path)%></li>
 						<li><%= link_to("Edit Account", edit_user_path(current_user))%></li>
+            <%if current_user.admin %>
+              <li role="separator" class="divider"></li>
+              <li><%=link_to("Admin Tools", admin_path)%></li>
+              <%end%>
 					</ul>
         <%end%>
 			</span>
