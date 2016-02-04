@@ -9,7 +9,8 @@
       <div id="instruct-box" class="col-md-10">
         <h5 id="chal-instruct"><%= @challenge.instructions.html_safe%></h5>
         <h5 id="chal-problem"><%= @challenge.problem.html_safe%></h5>
-      <button onclick="hintFunc()" id="hint-btn" class="btn btn-primary"><%= @challenge.hints.html_safe%>Hint</button>
+        <button id="hint-btn" class="btn btn-primary">Hint</button>
+        <h5><%= @challenge.hints.html_safe%></h5>
     </div>
     <span id='answer'><%=@challenge.answer%></span>
   </div>
