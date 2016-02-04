@@ -36,10 +36,15 @@
 #chal-title{
     font-family: 'Permanent Marker';
     margin-left: 5%;
+    color: #AFDFFF;
 }
 #chal-lesson, #chal-instruct, #chal-problem{
     font-family: 'Poppins';
+    font-size: 15px;
 }
 ::-webkit-scrollbar{
    display: none;
+}
+.cword{
+    color: #AFDFFF;
 }
