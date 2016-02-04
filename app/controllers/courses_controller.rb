@@ -4,15 +4,34 @@ class CoursesController < ApplicationController
   end
 
   def new
-    @course = Course.new
+    if current_user.admin
+      @course = Course.new
+    else
+      redirect_to current_user
+    end
   end
 
   def edit
-    @course = Course.find(params[:id])
+    if current_user.admin
+      @course = Course.find(params[:id])
+    else
+      redirect_to current_user
+    end
   end
 
   def create
-    @course = Course.new(course_params)
+    if current_user.admin
+      @course = Course.new(course_params)
+      if @course.save
+        flash[:notice]= "Saved"
+        redirect_to @course
+      else
+        flash[:notice]= "error"
+        redirect_to :back
+      end
+    else
+      redirect_to current_user
+    end
   end
 
   def show
@@ -25,7 +44,18 @@ class CoursesController < ApplicationController
   end
 
   def update
-    @course = Course.find(params[:id])
+    if current_user.admin
+      @course = Course.find(params[:id])
+      if @course.update_attributes(course_params)
+        flash[:notice]= "Saved"
+        redirect_to @course
+      else
+        flash[:notice]= "error"
+        redirect_to :back
+      end
+    else
+      redirect_to current_user
+    end
   end
 
   private
