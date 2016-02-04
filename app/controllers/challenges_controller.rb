@@ -29,7 +29,12 @@ class ChallengesController < ApplicationController
   end
 
   def edit
-    @challenge = Challenge.find(params[:id])
+    if current_user.admin
+      @course = Course.find(params[:course_id])
+      @challenge = Challenge.find(params[:id])
+    else
+      redirect_to current_user
+    end
   end
 
   def show
@@ -40,13 +45,18 @@ class ChallengesController < ApplicationController
   end
 
   def update
-    @challenge = Challenge.find(params[:id])
-    if @challenge.update_attributes(challenge_params)
-      flash[:notice]= "updated challenge"
-      redirect_to @challenge
+    if current_user.admin
+      @course = Course.find(params[:course_id])
+      @challenge = Challenge.find(params[:id])
+      if @challenge.update_attributes(challenge_params)
+        flash[:notice]= "updated challenge"
+        redirect_to course_challenge_path(@course,@challenge)
+      else
+        flash[:notice]= "didn't update"
+        redirect_to @challenge
+      end
     else
-      flash[:notice]= "didn't update"
-      redirect_to @challenge
+      redirect_to current_user
     end
   end
 

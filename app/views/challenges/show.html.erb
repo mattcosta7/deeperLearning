@@ -1,11 +1,11 @@
 <div class='wrap'>
   <h3><%=@challenge.course.name%></h3>
   <h4><%= @challenge.title%></h4>
-  <h4><%= @challenge.lesson%></h4>
+  <h4><%= @challenge.lesson.html_safe%></h4>
   <h4><%= @challenge.problem%></h4>
   <h4><%= @challenge.instructions%></h4>
   <h4><%= @challenge.hints%></h4>
-    <span id='answer'><%=@challenge.answer%></span>
+  <span id='answer'><%=@challenge.answer%></span>
 
 <% if !current_user.completions.exists?(completed_id:params[:id]) %>
 <div id="editor"></div>
