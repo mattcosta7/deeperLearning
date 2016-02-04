@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+#logo{
+	font-family: 'Allerta Stencil';
+}
+.navbar{
+	margin-bottom: 6%;
+}
+.logolnk{
+	background: -webkit-linear-gradient(#F4F8F9, #089CFE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	font-size: 45px;
+}
+.logolnk:hover{
+		text-decoration: none;
+}
