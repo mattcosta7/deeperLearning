@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class AvatarUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
 
   # Include RMagick or MiniMagick support:
   #include CarrierWave::RMagick
@@ -15,7 +16,13 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def store_dir
   #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   # end
+  version :thumb do
+    process :resize_to_fit => [150, 150]
+  end
 
+  version :full do 
+    process :resize_to_fit => [250,250]
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   # #   # For Rails 3.1+ asset pipeline compatibility:
