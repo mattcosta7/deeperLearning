@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :courses do 
     resources :challenges
   end
+  post '/complete/:id' => 'completions#create'
   root 'home#home'
 
   # The priority is based upon order of creation: first created -> highest priority.

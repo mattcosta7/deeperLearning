@@ -19,20 +19,35 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_name(params[:id])
+  end
+
+  def update
+    puts params.inspect
+    @user = User.find_by_name(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:notice]="Updated"
+      redirect_to @user
+    else
+      flash[:notice]="Not happenin"
+      redirect_to :back
+    end
   end
 
   def show
     @user = User.find_by_name(params[:id])
   end
 
+
+
   def destroy
   end
 
+
+  private
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation, :location, :birthday, :hobbies, :email)
+    params.require(:user).permit(:name, :password, :password_confirmation, :location, :birthday, :hobbies, :email,:avatar)
   end
 
-  def update
-  end
+
 end

@@ -11,12 +11,12 @@
 </head>
 <body>
 		<div class="col-md-12">
-			<li class="col-md-10"><%= link_to "Deeper Learing", user_path(@user) %></li>
+			<li><%= link_to "Deeper Learing", user_path(current_user) if current_user %></li>
 			<span class="dropdown col-md-2">
 				<button class="dropdown-toggle" type="button" data-toggle="dropdown"><img src="/anglersmall.png"><span class="caret"></span></button>
 					<ul class="dropdown-menu">
 						<li><%= link_to("Sign Out", logout_path) %></li>
-						<li><%= link_to("Edit Account", edit_user_path) %></li>
+						<li><%= link_to("Edit Account", edit_user_path(current_user)) if current_user %></li>
 					</ul>
 			</span>
 		</div>

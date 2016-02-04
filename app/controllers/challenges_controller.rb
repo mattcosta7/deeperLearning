@@ -30,6 +30,14 @@ class ChallengesController < ApplicationController
   end
 
   def update
+    @challenge = Challenge.find(params[:id])
+    if @challenge.update_attributes(challenge_params)
+      flash[:notice]= "updated challenge"
+      redirect_to @challenge
+    else
+      flash[:notice]= "didn't update"
+      redirect_to @challenge
+    end
   end
 
   private
