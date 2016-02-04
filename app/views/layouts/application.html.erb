@@ -9,7 +9,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
-			<li><%= link_to "Deeper Learing", user_path(current_user) %></li>
+			<li><%= link_to "Deeper Learing", user_path(current_user) if current_user %></li>
 		
 			<div class="dropdown">
 				<button class="dropdown-toggle" type="button" data-toggle="dropdown"><img src="/anglerfish.png"><span class="caret"></span></button>

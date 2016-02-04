@@ -15,12 +15,17 @@
 //= require jquery_ujs
 //= require_tree .
 
-function checkForm(){
-  var val = editor.getValue().trim();
-  if(val == document.getElementById('answer').innerHTML){
-    console.log("You didn't screw up");
-  }
-  else
-    console.log("Angry Jon");
-  return false;
-}
+$(document).ready(function(){
+  $('#nextLink').hide();
+  editor.getSession().on('change', function () {
+      $('#content').val(editor.getSession().getValue().trim());
+      if($('#content').val() == document.getElementById('answer').innerHTML)
+        $('#nextLink').show();
+   });
+
+   $('#content').val(editor.getSession().getValue().trim());
+
+})
+
+
+

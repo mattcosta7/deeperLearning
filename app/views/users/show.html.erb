@@ -1,7 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2>Welcome, <%=@user.name%></h2>
 <%=image_tag(@user.avatar)%>
-<%=@user.name%>
+
+<% if @user.completions.length > 0 %>
+  <ul>
+  <% @user.completions.each do |comp| %>
+    <li><%=comp.title%></li>
+  <%end%>
+
+  </ul>
+<% else %>
+  <%=link_to("Take a class!",courses_path)%>
+<%end%>
 <!-- this is the user home page -->
 <!-- Welcome User Name -->
 <!-- User Image -->
@@ -10,5 +19,3 @@
 <!-- course links div -->
 	<!-- completed lessons (as links to lesson show page) -->
 	<!-- uncompleted lessons (as links to lesson show page)-->
-
-	<%= link_to "Logout", logout_path %>
