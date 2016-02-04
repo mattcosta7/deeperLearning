@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :birthday
       t.string :location
       t.text :hobbies
-      t.boolean :admin
+      t.boolean :admin, default: false
       t.timestamps null: false
     end
   end

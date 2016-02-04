@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160203214328) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string   "names"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20160203214328) do
     t.datetime "birthday"
     t.string   "location"
     t.text     "hobbies"
-    t.boolean  "admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "avatar"
   end
 
