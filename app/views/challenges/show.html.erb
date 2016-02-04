@@ -7,23 +7,25 @@
   <h4><%= @challenge.hints%></h4>
     <span id='answer'><%=@challenge.answer%></span>
 
+<% if !current_user.completions.exists?(completed_id:params[:id]) %>
+<div id="editor"></div>
+<%else%>
+<div id="editor"><%=@challenge.answer%></div>
+<%end%>
 
-<div id="editor">
-    
-</div>
-<button data-remote='true' data-method='post' onclick="checkForm()">submit</button>
-
+<% if !current_user.completions.exists?(completed_id: @challenge.id)%>
+  <%=link_to("Mark Completed",completion_path(@challenge), method: :post, id:'compLink',remote:true)%>
+<%end%>
 
 <% if Challenge.exists?(@challenge.id+1) %>
-<%=link_to("Next Challenge", course_challenge_path(@challenge.course,(@challenge.id + 1)), id: "nextLink")%>
+<%=link_to("Next Challenge", course_challenge_path(@challenge.course,(@challenge.id + 1)), id: "nextLink") if current_user.completions.exists?(completed_id: @challenge.id)%>
 <%else%>
-<%=link_to("Completed All Courses", user_path(current_user), id: "nextLink")%>
+<%=link_to("Completed All Courses", user_path(current_user), id: "nextLink") if current_user.completions.exists?(completed_id: @challenge.id)%>
 <%end%>
 </div>
 
-<%=form_for(:checkAnswer, url: '/complete/:id', method: :post) do |f|%>
-  <%= f.hidden_field :checkAnswer, id: 'content'%>
-  <%=f.submit %>
+<%=form_tag do %>
+  <%=hidden_field_tag(:checkAnswer, "", :id => "content")%>
 <%end%>
     
 <script>

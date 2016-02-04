@@ -4,7 +4,8 @@
 <% if @user.completions.length > 0 %>
   <ul>
   <% @user.completions.each do |comp| %>
-    <li><%=comp.title%></li>
+    <% @challenge = Challenge.find(comp.completed_id) %>
+    <li><%=link_to(@challenge.title, course_challenge_path(@challenge.course,@challenge))%></li>
   <%end%>
 
   </ul>
