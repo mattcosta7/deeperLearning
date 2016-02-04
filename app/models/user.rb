@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :courses
   has_many :completions
-  
   mount_uploader :avatar, AvatarUploader
   
   validates :name, presence: true
@@ -18,6 +17,7 @@ class User < ActiveRecord::Base
   def downcase_email
     self.email = email.downcase
   end 
+
 
 
   def to_param
