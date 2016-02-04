@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
       @course = Course.new(course_params)
       if @course.save
         flash[:notice]= "Saved"
-        redirect_to @course
+        redirect_to courses_path
       else
         flash[:notice]= "error"
         redirect_to :back
@@ -60,6 +60,6 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit(:names)
+    params.require(:course).permit(:name)
   end
 end

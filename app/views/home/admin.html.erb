@@ -1,0 +1,12 @@
+<h2>Select a Course: </h2>
+<%=link_to "Create a Course", new_course_path %>
+<%@courses.each do |course|%>
+<ul>
+  <li><%=link_to course.name, course%></li>
+  <ul>
+    <% course.challenges.each do |challenge| %>
+      <li><%=link_to(challenge.title, course_challenge_path(course, challenge)) %></li>
+    <%end%>
+  </ul>
+</ul>
+<%end%>

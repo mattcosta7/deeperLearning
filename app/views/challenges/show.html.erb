@@ -1,5 +1,6 @@
 <div class='wrap'>
   <h3><%=@challenge.course.name%></h3>
+  <%=link_to "Edit Challenge", edit_course_challenge_path(@challenge.course, @challenge) if current_user.admin %>
   <h4><%= @challenge.title%></h4>
   <h4><%= @challenge.lesson.html_safe%></h4>
   <h4><%= @challenge.problem%></h4>

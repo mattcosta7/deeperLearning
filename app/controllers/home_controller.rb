@@ -7,4 +7,12 @@ class HomeController < ApplicationController
       @user = User.new
   	end
   end
+
+  def admin
+    if current_user.admin
+      @courses = Course.all
+    else
+      redirect_to current_user
+    end
+  end
 end
