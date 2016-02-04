@@ -9,8 +9,9 @@
     bottom: 0;
     left: 0;
     word-wrap: break-word;
-    height: 500px;
-    width: 500px
+    height: 400px;
+    width: 750px;
+    border: 3px solid #089CFE;
 }
 
 #answer{
@@ -19,4 +20,26 @@
 
 #content{
   visibility: hidden;
+}
+#content-box{
+    height: 600px;
+    overflow: scroll;
+    margin-left: 3%;
+    background: #767F91;
+    border: 3px solid #089CFE;
+    margin-right: 6%;
+    color: #F4F8F9;
+}
+#crsname{
+    font-family: 'Allerta Stencil';
+}
+#chal-title{
+    font-family: 'Permanent Marker';
+    margin-left: 5%;
+}
+#chal-lesson, #chal-instruct, #chal-problem{
+    font-family: 'Poppins';
+}
+::-webkit-scrollbar{
+   display: none;
 }

@@ -29,6 +29,10 @@ $(document).ready(function(){
 
    $('#content').val(editor.getSession().getValue().trim());
 
+   $('#hint-btn').on('click', function(){
+   		$('#hint').show();
+   });
+
 })
 
 
