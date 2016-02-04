@@ -17,14 +17,15 @@
 
 $(document).ready(function(){
   $('#nextLink').hide();
+  editor.getSession().on('change', function () {
+      $('#content').val(editor.getSession().getValue().trim());
+      if($('#content').val() == document.getElementById('answer').innerHTML)
+        $('#nextLink').show();
+   });
+
+   $('#content').val(editor.getSession().getValue().trim());
+
 })
 
-function checkForm(){
-  var val = editor.getValue().trim();
-  if(val == document.getElementById('answer').innerHTML){
-    $('#nextLink').show();
-  }
-  else
-    console.log("Angry Jon");
-  return false;
-}
+
+

@@ -6,16 +6,25 @@
   <h4><%= @challenge.instructions%></h4>
   <h4><%= @challenge.hints%></h4>
     <span id='answer'><%=@challenge.answer%></span>
+
+
 <div id="editor">
     
 </div>
-<button onclick="checkForm()">submit</button>
+<button data-remote='true' data-method='post' onclick="checkForm()">submit</button>
+
+
 <% if Challenge.exists?(@challenge.id+1) %>
 <%=link_to("Next Challenge", course_challenge_path(@challenge.course,(@challenge.id + 1)), id: "nextLink")%>
 <%else%>
 <%=link_to("Completed All Courses", user_path(current_user), id: "nextLink")%>
 <%end%>
 </div>
+
+<%=form_for(:checkAnswer, url: '/complete/:id', method: :post) do |f|%>
+  <%= f.hidden_field :checkAnswer, id: 'content'%>
+  <%=f.submit %>
+<%end%>
     
 <script>
     var editor = ace.edit("editor");
