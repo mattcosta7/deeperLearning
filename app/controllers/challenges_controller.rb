@@ -5,17 +5,27 @@ class ChallengesController < ApplicationController
   end
 
   def new
-    @challenge = Challenge.new
+    if current_user.admin
+      @course = Course.find(params[:course_id])
+      @challenge = @course.challenges.build
+    else
+      redirect_to current_user
+    end
   end
 
   def create
-    @challenge = Challenge.new(challenge_params)
-    if @challenge.save
-      flash[:notice]="Challenge Saved"
+    if current_user.admin
+      @course = Course.find(params[:course_id])
+      @challenge = @course.challenges.build(challenge_params)
+      if @challenge.save
+        flash[:notice]="Challenge Saved"
+      else
+        flash[:notice]="Challenge Didn't Save"
+      end
+      redirect_to current_user
     else
-      flash[:notice]="Challenge Didn't Save"
+      redirect_to current_user
     end
-    redirect_to admin_path
   end
 
   def edit

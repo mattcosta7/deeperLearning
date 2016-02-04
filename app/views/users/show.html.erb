@@ -1,6 +1,7 @@
 <h2>Welcome, <%=@user.name%></h2>
+<%= link_to edit_user_path @user do %>
 <%=image_tag(@user.avatar)%>
-
+<%end%>
 <% if @user.completions.length > 0 %>
   <ul>
   <% @user.completions.each do |comp| %>
