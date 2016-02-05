@@ -58,6 +58,7 @@ class ChallengesController < ApplicationController
       end
     else
       redirect_to current_user
+    end
   end
 
 #update challenge if current user is admin, else redirect
