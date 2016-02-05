@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 $pop-blue: #089CFE;
+$compl: #6691AA;
 $drk-navy: #2A2C54;
 $drk-gry: #767F91;
 $lt-gry: #BFC8CF;
@@ -36,4 +37,17 @@ progress::-webkit-progress-bar{
 progress::-webkit-progress-value{
 	background-color: $pop-blue;
 	border-radius: 9px;
+}
+.challenge{
+	display: block;
+	color: $compl !important;
+	font-size: 20px;
+}
+.incomplete{
+	display: block;
+	color: $pop-blue;
+	font-size: 20px;
+}
+#tocomplt-box{
+	margin-left: 1%;
 }
