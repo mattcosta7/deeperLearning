@@ -28,6 +28,7 @@ gem 'bcrypt'
 
 gem 'ace-rails-ap'
 
+gem 'fog'
 gem 'carrierwave'
 gem "mini_magick"
 # Use Unicorn as the app server
