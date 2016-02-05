@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// if no current_user //
 $pop-blue: #089CFE;
 $drk-navy: #2A2C54;
 $drk-gry: #767F91;
@@ -19,14 +21,16 @@ $hlite: #F4F8F9;
 #signin, #sgnup-prompt{
 	display: none;
 }
-#su-title, #si-title,#signin-lnk, #signup-lnk {
-	color: $pop-blue;
+#signin-lnk, #signup-lnk {
+	color: $drk-navy;
 }
 #su-title, #si-title{
-	text-shadow: 1px 1px $hlite,
-		1px -1px $hlite,
-		-1px 1px $hlite,
-		-1px -1px $hlite;
+	color: $drk-navy;
+	font-weight: 800;
+	text-shadow: 0.5px 0.5px $hlite,
+		0.5px -0.5px $hlite,
+		-0.5px 0.5px $hlite,
+		-0.5px -0.5px $hlite;
 }
 #hashtag{
 	font-size: 35px;
@@ -60,7 +64,7 @@ $hlite: #F4F8F9;
 }
 #col-right{
 	padding: 15px;
-	background: $lt-gry;
+	background: rgba(191,200,207,0.75);
 	border: 2px solid $drk-gry;
 	border-radius: 2em 2em;
 }
@@ -78,3 +82,4 @@ float: left;
 	position: absolute;
 	bottom: 0;
 }
+
