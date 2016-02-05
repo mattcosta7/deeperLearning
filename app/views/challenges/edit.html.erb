@@ -10,3 +10,5 @@
   <%=f.text_area :answer, placeholder: "answers"%>
   <%=f.submit%>
 <%end%>
+
+<%= link_to "Delete Challenge", course_challenge_path(@course, @challenge), method: :delete %>

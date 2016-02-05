@@ -1,9 +1,10 @@
-<h2>Welcome, <%=@user.name%></h2>
+<h2 id="wel-name" class="col-md-12">Welcome, <%=@user.name%></h2>
 <%= link_to edit_user_path @user do %>
-<%=image_tag(@user.avatar)%>
+<div class="col-md-12"><%=image_tag(@user.avatar)%></div>
 <%end%>
+<h3 class="col-md-12">This will be the completions bar</h3>
 <% if @user.completions.length > 0 %>
-  <ul>
+  <ul class="col-md-12">
   Completed:
   <% @user.completions.each do |comp| %>
     <% @challenge = Challenge.find(comp.completed_id) %>
@@ -25,11 +26,3 @@
   <%end%>
 <%end%>
 <%=link_to("Take a class!",courses_path)%>
-<!-- this is the user home page -->
-<!-- Welcome User Name -->
-<!-- User Image -->
-<!-- user courses -->
-	<!-- <span>course name</span> <span>progress bar</span> -->
-<!-- course links div -->
-	<!-- completed lessons (as links to lesson show page) -->
-	<!-- uncompleted lessons (as links to lesson show page)-->
