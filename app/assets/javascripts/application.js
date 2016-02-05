@@ -60,9 +60,3 @@ $(document).ready(function(){
   
 
 });
-
-
-   
-
-
-

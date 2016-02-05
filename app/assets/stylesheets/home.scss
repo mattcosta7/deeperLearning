@@ -22,12 +22,18 @@ $hlite: #F4F8F9;
 #su-title, #si-title,#signin-lnk, #signup-lnk {
 	color: $pop-blue;
 }
+#su-title, #si-title{
+	text-shadow: 1px 1px $hlite,
+		1px -1px $hlite,
+		-1px 1px $hlite,
+		-1px -1px $hlite;
+}
 #hashtag{
 	font-size: 35px;
 	color: $hlite;
 	font-family: "Permanent Marker";
-	margin-top: 48%;
-	margin-left: 68%;
+	margin-left: 63%;
+	float: left;
 }
 #slogan{
 	color: $lt-gry;
@@ -42,11 +48,33 @@ $hlite: #F4F8F9;
 	color: $hlite;
 }
 #angler{
-	margin-bottom: 15%;
+	margin-top: 16%;
+	margin-left: 0;
+	-webkit-transform: rotate(-10deg); 
+  -webkit-transform-origin: 20% 40%; 
+    transform: rotate(-10deg);
+    transform-origin: 20% 40%;
+}
+#col-left{
+	margin-bottom: 10%;
+}
+#col-right{
+	padding: 15px;
+	background: $lt-gry;
+	border: 2px solid $drk-gry;
+	border-radius: 2em 2em;
 }
 .crs-lnk{
 	font-family: 'Poppins';
 	color: $lt-gry;
 	font-size: 20px;
 	margin-left: 5%;
+	padding-top: 17px;
+float: left;
+}
+#footer{
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
 }
