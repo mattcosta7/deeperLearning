@@ -17,24 +17,40 @@
 
 $(document).ready(function(){
 
-  $('#compLink').hide();
-  editor.getSession().on('change', function () {
-      $('#content').val(editor.getSession().getValue().trim());
-      if($('#content').val() == document.getElementById('answer').innerHTML){
-        $('#compLink').show();
-        editor.setReadOnly(true);
-      }
+  // $('#compLink').hide();
+  // editor.getSession().on('change', function () {
+  //     $('#content').val(editor.getSession().getValue().trim());
+  //     if($('#content').val() == document.getElementById('answer').innerHTML){
+  //       $('#compLink').show();
+  //       editor.setReadOnly(true);
+  //     }
 
-   });
+  //  });
 
-   $('#content').val(editor.getSession().getValue().trim());
+   // $('#content').val(editor.getSession().getValue().trim());
 
    $('#hint-btn').on('click', function(){
    		$('#hint').show();
    		$('#content-box').scrollTop(600);
    });
 
-})
+   $('#sgnin-prompt').on('click', function(){
+      $(this).hide();
+      $('#sgnup-prompt').show();
+      $('#signup').hide();
+      $('#signin').show();
+   });
+
+   $('#sgnup-prompt').on('click', function(){
+      $(this).hide();
+      $('#sgnin-prompt').show();
+      $('#signin').hide();
+      $('#signup').show();
+   });
+
+
+
+});
 
 
 
