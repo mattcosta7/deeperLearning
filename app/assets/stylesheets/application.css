@@ -24,6 +24,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 	font-size: 45px;
+	font-family: "Allerta Stencil";
+	height: 55px;
 }
 .logolnk:hover{
 		text-decoration: none;
