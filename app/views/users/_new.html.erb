@@ -1,9 +1,9 @@
-
+ 
 
 <!-- New user form -->
 
-<h2>Sign Up</h2>
-
+<h2 id="su-title">Sign Up</h2>
+<div id="signupform"
 <%= form_for(@user) do |f| %>
 	<%= f.text_field :name, :placeholder => "Name" %>
 	<%= f.text_field :email, :placeholder => "Email" %>
@@ -11,3 +11,4 @@
     <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
 	<%= f.submit "Create Account" %>
 <% end %>
+</div>

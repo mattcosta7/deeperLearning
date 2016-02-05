@@ -1,4 +1,15 @@
-<%= render :partial => '/sessions/new' %>
-<%= render :partial => '/users/new', locals:{users: @user} %>
+<h1 class="logolnk col-md-12">Deeper Learning</h1>
+<h2 class="col-md-12">Deep Understanding in the Deepest Place on Earth</h2>
 
-<img src="/anglerfish.png">
+<div id="col-left" class="col-md-7">
+	<img src="/anglerfish.png">
+	<%= link_to "Check Out Our Courses", courses_path(@course) %>
+</div>
+
+<div id="col-right">
+	<%= render :partial => '/users/new', locals:{users: @user} %>
+	<h4>Already have an account? <p id="signin-lnk">Sign in Here</p></h4>
+	<span id="signin"><%= render :partial => '/sessions/new' %></span>
+	<h1 id="hashtag">#GoDeep</h1>
+</div>
+

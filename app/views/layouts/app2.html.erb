@@ -10,9 +10,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Allerta+Stencil|Permanent+Marker|Poppins' rel='stylesheet' type='text/css'>
 </head>
 <body class="bkgd2">
-		<div class="col-md-12 navbar">
-			<h1 id="logo" class="col-md-10"><%= link_to "Deeper Learning", user_path(current_user), :class => "logolnk" if current_user %></h1>
-		</div>
 
 		<%= flash[:notice] if flash[:notice] %>
 <%= yield %>
