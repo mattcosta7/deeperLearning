@@ -5,6 +5,7 @@ class HomeController < ApplicationController
       redirect_to current_user
     else
       @user = User.new
+      render layout: 'app2'
   	end
   end
 
