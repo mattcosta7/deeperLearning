@@ -1,8 +1,39 @@
 /*// Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
+$pop-blue: #089CFE;
+$drk-navy: #2A2C54;
+$drk-gry: #767F91;
+$lt-gry: #BFC8CF;
+$hlite: #F4F8F9;
+
 
 button{
 	background: transparent;
 	border: none;
+}
+#user-content-box{
+	margin-left: 31%;
+}
+#wel-name{
+	color: $pop-blue;
+	font-family: 'Permanent Marker';
+}
+#username{
+	color: $pop-blue;
+}
+progress{
+	background-color: $pop-blue;
+	border: 0;
+	height: 15px;
+	width: 250px;
+	border-radius: 9px;
+}
+progress::-webkit-progress-bar{
+	background-color: $lt-gry;
+	border-radius: 9px;
+}
+progress::-webkit-progress-value{
+	background-color: $pop-blue;
+	border-radius: 9px;
 }
