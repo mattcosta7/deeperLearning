@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ace-rails-ap
 //= require ace/theme-tomorrow_night_blue
 //= require ace/mode-javascript
-//= require ace-rails-ap
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
