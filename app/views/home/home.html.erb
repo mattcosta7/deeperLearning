@@ -1,9 +1,8 @@
 <h1 class="logolnk col-md-12">Deeper Learning</h1>
-<h2 class="col-md-12" id="slogan">Deep Understanding in the Deepest Place on Earth</h2>
+<h2 class="col-md-12" id="slogan">Learn to Code in the Deepest Place on Earth</h2>
 
-<div id="col-left" class="col-md-7">
+<div id="col-left" class="col-md-5">
 	<img id="angler" src="/anglerfish.png">
-	<div id="crs-lnk"><%= link_to "Check Out Our Courses", courses_path(@course), :class => "crs-lnk" %></div>
 </div>
 
 <div id="col-right" class="col-md-4">
@@ -11,6 +10,9 @@
 	<div id="signin"><%= render :partial => '/sessions/new' %></div>
 	<h4 id="sgnin-prompt">Already have an account? <p id="signin-lnk">Sign in Here</p></h4>
 	<h4 id="sgnup-prompt">Not a Member? <p id="signup-lnk">Sign Up Here</p></h4>
-	<h1 id="hashtag">#GoDeep</h1>
 </div>
 
+<footer id="footer">
+	<span id="crs-lnk"><%= link_to "Check Out Our Courses", courses_path(@course), :class => "crs-lnk" %></span>
+	<p id="hashtag">#GoDeep</p>
+</footer>
