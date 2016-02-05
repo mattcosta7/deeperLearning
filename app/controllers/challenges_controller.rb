@@ -42,6 +42,14 @@ class ChallengesController < ApplicationController
   end
 
   def destroy
+     @challenge = Challenge.find(params[:id])
+     if @challenge.destroy
+        flash[:notice] = "success, Erin is da best"
+        redirect_to root_path
+    else
+      flash[:notice] = "Matt, what did you do wrong?"
+      redirect_to course_challenges_path
+    end
   end
 
   def update
