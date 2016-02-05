@@ -1,5 +1,6 @@
 <h2>Create a New Course Track!?</h2>
-<%=form_for(@course) do |f|%>
+<%=form_for(@course, html: { multipart: true } ) do |f|%>
+  <%= f.file_field :icon%>
   <%=f.text_field :name, placeholder: "Name"%>
   <%=f.submit%>
 <%end%>

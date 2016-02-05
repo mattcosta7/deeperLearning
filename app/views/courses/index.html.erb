@@ -1,5 +1,6 @@
 <ul>
 <% @courses.each do |course| %>
+  <li><%=image_tag course.icon.url(:thumb)%>  </li>
   <li><%=link_to(course.name, course_path(course))%></li>
 <%end%>
 </ul>

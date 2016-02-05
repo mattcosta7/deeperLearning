@@ -1,4 +1,5 @@
 class Course < ActiveRecord::Base
+  mount_uploader :icon, IconUploader
   has_many :challenges
   belongs_to :user
 
