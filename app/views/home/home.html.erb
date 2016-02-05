@@ -1,5 +1,5 @@
 <h1 class="logolnk col-md-12">Deeper Learning</h1>
-<h2 class="col-md-12">Deep Understanding in the Deepest Place on Earth</h2>
+<h2 class="col-md-12" id="slogan">Deep Understanding in the Deepest Place on Earth</h2>
 
 <div id="col-left" class="col-md-7">
 	<img src="/anglerfish.png">
@@ -7,9 +7,10 @@
 </div>
 
 <div id="col-right" class="col-md-4">
-	<%= render :partial => '/users/new', locals:{users: @user} %>
-	<h4>Already have an account? <p id="signin-lnk">Sign in Here</p></h4>
+	<div id="signup"><%= render :partial => '/users/new', locals:{users: @user} %></div>
 	<div id="signin"><%= render :partial => '/sessions/new' %></div>
+	<h4 id="sgnin-prompt">Already have an account? <p id="signin-lnk">Sign in Here</p></h4>
+	<h4 id="sgnup-prompt">Not a Member? <p id="signup-lnk">Sign Up Here</p></h4>
 	<h1 id="hashtag">#GoDeep</h1>
 </div>
 

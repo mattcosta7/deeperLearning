@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$pop-blue: #089CFE;
+$drk-navy: #2A2C54;
+$drk-gry: #767F91;
+$lt-gry: #BFC8CF;
+$hlite: #F4F8F9;
+
 .divider {
   height: 1px;
   width:100%;
@@ -10,16 +16,24 @@
   overflow: hidden;
   background-color: #e5e5e5;
 }
-#signin{
+#signin, #sgnup-prompt{
 	display: none;
 }
 #su-title{
-	color: blue;
+	color: $pop-blue;
 }
 #hashtag{
 	font-size: 35px;
-	color: #F4F8F9;
-	font-family: "Poppins";
+	color: $hlite;
+	font-family: "Permanent Marker";
 	margin-top: 70%;
 	margin-left: 68%;
+}
+#slogan{
+	color: $lt-gry;
+	font-family: 'Poppis';
+	font-size: 27px;
+	margin-left: 8%;
+	margin-top: 0;
+	margin-bottom: 10%;
 }
