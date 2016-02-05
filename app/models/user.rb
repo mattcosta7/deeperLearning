@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :courses
-  has_many :completions
+  before_save :downcase_email
   mount_uploader :avatar, AvatarUploader
   
   validates :name, presence: true
@@ -11,8 +11,9 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true,length: { minimum: 6 }, on: :create
   validates_uniqueness_of :email, case_sensitive: false
   
+
   has_many :completions, foreign_key: :completer_id
-  has_many :completed, through: :completions, source: :completed
+  has_many :completed, through: :completions, source: :completed, dependent: :destroy
 
   def downcase_email
     self.email = email.downcase
@@ -25,3 +26,10 @@ class User < ActiveRecord::Base
   end
   
 end
+
+#users have secure passwords (confirmed on creation)
+#users have an avatar uploader
+#users have names, email validated through regex, passwords and confirmed passwords min 6 char
+#unique email addresses
+#users can complete challenges through a dependent destroyed entry on the completion table
+#user emails are downcased and params of the user are names instead of id numbers

@@ -19,4 +19,13 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [250,250]
   end
 
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 end
+
+#avatar uploader for users, resizes images to thumb and full versions
+#stores on aws through fog gem, and in a folder by model name/type
+#uses minimagick for resizing
+#only allows images in jpg/jpeg gif and png formats
+#sets default if none uploaded

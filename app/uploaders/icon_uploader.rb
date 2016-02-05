@@ -25,3 +25,9 @@ class IconUploader < CarrierWave::Uploader::Base
 
 
 end
+
+#icon uploader for courses, resizes images to thumb and full versions
+#stores on aws through fog gem, and in a folder by model name/type
+#uses minimagick for resizing
+#only allows images in jpg/jpeg gif and png formats
+#sets default if none uploaded

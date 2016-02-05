@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
+#all users set to @users
   def index
     @users = User.all
   end
 
+#sets a new user up
   def new
     @user = User.new
   end
 
+#creates a user with user params
   def create
     @user = User.create(user_params)
       if @user.save
@@ -20,10 +23,13 @@ class UsersController < ApplicationController
       end
   end
 
+#preps edit a user form by their name params
   def edit
     @user = User.find_by_name(params[:id])
   end
 
+#updates a user by newly passed in params, if that's the current user and 
+#it's authenticated
   def update
     @user = User.find_by_name(params[:id])
     if @user == current_user && @user.authenticate(params[:user][:password])
@@ -40,16 +46,25 @@ class UsersController < ApplicationController
     end
   end
 
+#shows a user
   def show
     @user = User.find_by_name(params[:id])
   end
 
 
-
+#destorys a user if they are the current one, and they type their password
   def destroy
+    @user = User.find_by_name(params[:id])
+    if current_user == @user && @user.authenticate(params[:user][:password])&& @user.destroy
+      flash[:notice]="you're deleted"
+      redirect_to root_path
+    else
+      flash[:notice]="you're undeleteable"
+      redirect_to :back
+    end
   end
 
-
+#params for creating and editing users
   private
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation, :location, :birthday, :hobbies, :email,:avatar)
