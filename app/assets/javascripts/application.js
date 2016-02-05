@@ -39,6 +39,7 @@ $(document).ready(function(){
       $('#sgnup-prompt').show();
       $('#signup').hide();
       $('#signin').show();
+      $('#hashtag').css('margin-top', '54%');
    });
 
    $('#sgnup-prompt').on('click', function(){
@@ -46,6 +47,7 @@ $(document).ready(function(){
       $('#sgnin-prompt').show();
       $('#signin').hide();
       $('#signup').show();
+      $('#hashtag').css('margin-top', '48%');
    });
 
 

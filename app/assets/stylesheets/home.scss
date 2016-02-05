@@ -19,21 +19,34 @@ $hlite: #F4F8F9;
 #signin, #sgnup-prompt{
 	display: none;
 }
-#su-title{
+#su-title, #si-title,#signin-lnk, #signup-lnk {
 	color: $pop-blue;
 }
 #hashtag{
 	font-size: 35px;
 	color: $hlite;
 	font-family: "Permanent Marker";
-	margin-top: 70%;
+	margin-top: 48%;
 	margin-left: 68%;
 }
 #slogan{
 	color: $lt-gry;
-	font-family: 'Poppis';
+	font-family: 'Poppins';
 	font-size: 27px;
 	margin-left: 8%;
 	margin-top: 0;
 	margin-bottom: 10%;
+}
+#sgnup-prompt, #sgnin-prompt{
+	font-family: 'Poppins';
+	color: $hlite;
+}
+#angler{
+	margin-bottom: 15%;
+}
+.crs-lnk{
+	font-family: 'Poppins';
+	color: $lt-gry;
+	font-size: 20px;
+	margin-left: 5%;
 }
