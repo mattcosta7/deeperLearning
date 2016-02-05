@@ -1,9 +1,9 @@
 <h1 id="si-title">Sign In</h1>
 <div id="signin-form">
-	<%= form_for(:session, url: login_path) do |f| %>
-		<%=f.text_field :email, :placeholder => "Email" %>
-		<%=f.password_field :password, :placeholder => "Password" %>
-		<%=f.password_field :password_confirmation, :placeholder => "Confrim Password" %>
-		<%=f.submit "Sign In" %>
+	<%= form_for(:session, url: login_path, :class => "form form-horizontal") do |f| %>
+		<%=f.text_field :email, :placeholder => "Email", :class => "form-control" %>
+		<%=f.password_field :password, :placeholder => "Password", :class => "form-control" %>
+		<%=f.password_field :password_confirmation, :placeholder => "Confrim Password", :class => "form-control" %>
+		<%=f.submit "Sign In", :class => "btn btn-primary" %>
 	<% end %>
 </div>
