@@ -6,3 +6,6 @@ class Completion < ActiveRecord::Base
     validates :completed_id, uniqueness: {scope: :completer_id}
     validates :completer_id, uniqueness: {scope: :completed_id}
 end
+
+#completion table has completers and completeds through challenges
+# and users, unique in both regards
