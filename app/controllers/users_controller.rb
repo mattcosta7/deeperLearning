@@ -25,13 +25,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    puts params.inspect
     @user = User.find_by_name(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:notice]="Updated"
-      redirect_to @user
+    if @user == current_user && @user.authenticate(params[:user][:password])
+      if @user.update_attributes(edit_params)
+        flash[:notice]="Updated"
+        redirect_to @user
+      else
+        flash[:notice]="Not happenin"
+        redirect_to :back
+      end
     else
-      flash[:notice]="Not happenin"
+      flash[:notice]="Incorrect Password"
       redirect_to :back
     end
   end
@@ -51,5 +55,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :password, :password_confirmation, :location, :birthday, :hobbies, :email,:avatar)
   end
 
+  def edit_params
+    params.require(:user).permit(:name, :location, :birthday, :hobbies, :email,:avatar)
+  end
 
 end

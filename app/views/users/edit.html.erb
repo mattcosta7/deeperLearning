@@ -3,14 +3,13 @@
   <%=image_tag(@user.avatar.url(:thumb))%>
   
 <%= form_for(@user,:html => { :multipart => true } ) do |f| %>
-  <%= f.file_field :avatar %>
-  <%= f.text_field :name, :placeholder => "Name" %>
-  <%= f.text_field :email, :placeholder => "Email" %>
-  <%= f.text_field :location, :placeholder => "location" %>
-  <%= f.date_select :birthday, :placeholder => "birthday" %>
-  <%= f.text_area :hobbies, :placeholder => "hobbies" %>
-  <%= f.password_field :new_password, :placeholder => "Current Password" %>
-  <%= f.password_field :password, :placeholder => "New Password" %>
-  <%= f.password_field :password_confirmation, :placeholder => "Confirm New Password" %>
+  <%= f.file_field :avatar %><br>
+  <%= f.text_field :name, :placeholder => "Name" %><br>
+  <%= f.text_field :email, :placeholder => "Email" %><br>
+  <%= f.text_field :location, :placeholder => "location" %><br>
+  <%= f.date_select :birthday, :placeholder => "birthday" %><br>
+  <%= f.text_area :hobbies, :placeholder => "hobbies" %><br>
+  <%= f.password_field :password, :placeholder => "Password" %><br>
+
   <%= f.submit "Update Account" %>
 <% end %>
