@@ -1,7 +1,9 @@
-<h1>Sign In</h1>
-<%= form_for(:session, url: login_path) do |f| %>
-	<%=f.text_field :email, :placeholder => "Email" %>
-	<%=f.password_field :password, :placeholder => "Password" %>
-	<%=f.password_field :password_confirmation, :placeholder => "Confrim Password" %>
-	<%=f.submit "Sign In" %>
-<% end %>
+<h1 id="si-title">Sign In</h1>
+<div id="signin-form">
+	<%= form_for(:session, url: login_path) do |f| %>
+		<%=f.text_field :email, :placeholder => "Email" %>
+		<%=f.password_field :password, :placeholder => "Password" %>
+		<%=f.password_field :password_confirmation, :placeholder => "Confrim Password" %>
+		<%=f.submit "Sign In" %>
+	<% end %>
+</div>
