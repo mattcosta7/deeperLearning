@@ -1,8 +1,11 @@
 class CoursesController < ApplicationController
+ 
+#array of courses set to @courses
   def index
     @courses = Course.all
   end
 
+#if current user is admin, makes new course, else redirect
   def new
     if current_user.admin
       @course = Course.new
@@ -11,6 +14,7 @@ class CoursesController < ApplicationController
     end
   end
 
+#if current user is admin, prep to edit course, else redirect
   def edit
     if current_user.admin
       @course = Course.find(params[:id])
@@ -19,6 +23,7 @@ class CoursesController < ApplicationController
     end
   end
 
+#if current user is admin update course, else redirect
   def create
     if current_user.admin
       @course = Course.new(course_params)
@@ -34,15 +39,29 @@ class CoursesController < ApplicationController
     end
   end
 
+#sets course and challenges 
   def show
     @course = Course.find(params[:id])
     @challenges = @course.challenges
   end
 
+#if user is admin, destroys course, else redirects
   def destroy
-    @course = Course.find(params[:id])
+    if current_user.admin
+      @course = Course.find(params[:id])
+      if @course.destroy
+        flash[:notice]="Destroyed the course.....Duh Erin"
+        redirect_to courses_path
+      else
+        flash[:notice]="Fiddled but didn't destroy"
+        redirect_to :back
+      end
+    else
+      redirect_to current_user
+    end
   end
 
+#
   def update
     if current_user.admin
       @course = Course.find(params[:id])

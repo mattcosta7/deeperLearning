@@ -13,3 +13,9 @@ class Challenge < ActiveRecord::Base
   has_many :completions, foreign_key: :completed_id
   has_many :completers, through: :completions, source: :completer, dependent: :destroy
 end
+
+
+# challenges belong to a course
+# must have all aspects
+# also are marked completions through a completion tabl
+# by completers

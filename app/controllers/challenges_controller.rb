@@ -4,6 +4,7 @@ class ChallengesController < ApplicationController
     @challenges = Challenge.all
   end
 
+# if current user is admin, then create challenges, otherwise redirect
   def new
     if current_user.admin
       @course = Course.find(params[:course_id])
@@ -13,6 +14,7 @@ class ChallengesController < ApplicationController
     end
   end
 
+# if current user is admin, then create challenges, otherwise redirect
   def create
     if current_user.admin
       @course = Course.find(params[:course_id])
@@ -28,6 +30,7 @@ class ChallengesController < ApplicationController
     end
   end
 
+# if current user is admin, then edit challenges, otherwise redirect
   def edit
     if current_user.admin
       @course = Course.find(params[:course_id])
@@ -37,21 +40,28 @@ class ChallengesController < ApplicationController
     end
   end
 
+#show a challenge by params id
   def show
     @challenge = Challenge.find(params[:id])
   end
 
+#destroy a challenge if user is admin, else redirect
   def destroy
-     @challenge = Challenge.find(params[:id])
-     if @challenge.destroy
-        flash[:notice] = "success, Erin is da best"
-        redirect_to root_path
+    if current_user.admin
+      @challenge = Challenge.find(params[:id])
+      if @challenge.destroy
+          flash[:notice] = "success, Erin is da best, at being da worstest"
+          redirect_to root_path
+      else
+        flash[:notice] = "Q: Matt, what did you do wrong? A: Nothing, ever"
+        redirect_to course_challenges_path
+      end
     else
-      flash[:notice] = "Matt, what did you do wrong?"
-      redirect_to course_challenges_path
+      redirect_to current_user
     end
   end
 
+#update challenge if current user is admin, else redirect
   def update
     if current_user.admin
       @course = Course.find(params[:course_id])
@@ -68,6 +78,7 @@ class ChallengesController < ApplicationController
     end
   end
 
+#strong params for challenge
   private
   def challenge_params
     params.require(:challenge).permit(:course_id,:title,:instructions,:lesson,:problem,:answer,:hints)

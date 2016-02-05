@@ -18,43 +18,35 @@
 //= require_tree .
 
 $(document).ready(function(){
+//hint button opens on click
+  $('#hint-btn').on('click', function(){
+      $('#hint').show();
+      $('#content-box').scrollTop(600);
+   });
+//signin and signout prompts toggle on clicks
+   $('#sgnin-prompt').on('click', function(){
+      $(this).hide();
+      $('#sgnup-prompt').show();
+      $('#signup').hide();
+      $('#signin').show();
+   });
 
-    $('#hint-btn').on('click', function(){
-        $('#hint').show();
-        $('#content-box').scrollTop(600);
-     });
-
-     $('#sgnin-prompt').on('click', function(){
-        $(this).hide();
-        $('#sgnup-prompt').show();
-        $('#signup').hide();
-        $('#signin').show();
-     });
-
-     $('#sgnup-prompt').on('click', function(){
-        $(this).hide();
-        $('#sgnin-prompt').show();
-        $('#signin').hide();
-        $('#signup').show();
-     });
-
-  if(editor != undefined){
-    $('#compLink').hide();
-    editor.getSession().on('change', function () {
+   $('#sgnup-prompt').on('click', function(){
+      $(this).hide();
+      $('#sgnin-prompt').show();
+      $('#signin').hide();
+      $('#signup').show();
+   });
+   
+//hidesCompLink, and shows only when verified response is typed in.
+  $('#compLink').hide();
+  editor.getSession().on('change', function () {
     $('#content').val(editor.getSession().getValue().trim());
     if($('#content').val() == document.getElementById('answer').innerHTML){
       $('#compLink').show();
       editor.setReadOnly(true);
     }
   });
-
-
   $('#content').val(editor.getSession().getValue().trim());
-}
-
-
-
-
-  
 
 });
