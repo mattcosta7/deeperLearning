@@ -1,6 +1,5 @@
 class Challenge < ActiveRecord::Base
   belongs_to :course
-  has_many :completions
 
   validates :course_id, presence: true
   validates :title, presence: true
@@ -10,6 +9,7 @@ class Challenge < ActiveRecord::Base
   validates :answer, presence: true
   validates :hints, presence: true
 
+
   has_many :completions, foreign_key: :completed_id
-  has_many :completers, through: :completions, source: :completer
+  has_many :completers, through: :completions, source: :completer, dependent: :destroy
 end
