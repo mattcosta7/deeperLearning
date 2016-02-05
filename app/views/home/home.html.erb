@@ -3,13 +3,13 @@
 
 <div id="col-left" class="col-md-7">
 	<img src="/anglerfish.png">
-	<%= link_to "Check Out Our Courses", courses_path(@course) %>
+	<div id="crs-lnk"><%= link_to "Check Out Our Courses", courses_path(@course) %></div>
 </div>
 
-<div id="col-right">
+<div id="col-right" class="col-md-4">
 	<%= render :partial => '/users/new', locals:{users: @user} %>
 	<h4>Already have an account? <p id="signin-lnk">Sign in Here</p></h4>
-	<span id="signin"><%= render :partial => '/sessions/new' %></span>
+	<div id="signin"><%= render :partial => '/sessions/new' %></div>
 	<h1 id="hashtag">#GoDeep</h1>
 </div>
 

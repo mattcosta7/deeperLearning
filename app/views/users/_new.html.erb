@@ -3,12 +3,10 @@
 <!-- New user form -->
 
 <h2 id="su-title">Sign Up</h2>
-<div id="signupform"
-<%= form_for(@user) do |f| %>
-	<%= f.text_field :name, :placeholder => "Name" %>
-	<%= f.text_field :email, :placeholder => "Email" %>
-	<%= f.password_field :password, :placeholder => "Password" %>
-    <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
-	<%= f.submit "Create Account" %>
+<%= form_for(@user, :class => "form form-horizontal") do |f| %>
+	<%= f.text_field :name, :placeholder => "Name", :class => "form-control" %>
+	<%= f.text_field :email, :placeholder => "Email", :class => "form-control" %>
+	<%= f.password_field :password, :placeholder => "Password", :class => "form-control" %>
+    <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :class => "form-control" %>
+	<%= f.submit "Create Account", :class => "btn btn-primary" %>
 <% end %>
-</div>
