@@ -7,14 +7,31 @@ $drk-navy: #2A2C54;
 $drk-gry: #767F91;
 $lt-gry: #BFC8CF;
 $hlite: #F4F8F9;
-
+$df-font: 'Poppins';
 
 button{
 	background: transparent;
 	border: none;
 }
+.homeimg{
+	width: 250px;
+	border: 2px solid white;
+	border-radius: 1em 1em;
+}
 #user-content-box{
 	margin-left: 31%;
+}
+#topbox{
+	height: 340px;
+	margin-bottom: 10px;
+	margin-right: 50%;
+	margin-left: 38%;
+}
+#botbox{
+	background: rgba(191,200,207,0.2);
+	border: 2px solid $drk-gry;
+	border-radius: 2em 2em;
+	margin-left: 26%;
 }
 #wel-name{
 	color: $pop-blue;
@@ -22,6 +39,7 @@ button{
 }
 #username{
 	color: $pop-blue;
+	font-family: $df-font;
 }
 progress{
 	background-color: $pop-blue;
@@ -42,12 +60,25 @@ progress::-webkit-progress-value{
 	display: block;
 	color: $compl !important;
 	font-size: 20px;
+	font-family: $df-font;
 }
 .incomplete{
 	display: block;
 	color: $pop-blue;
 	font-size: 20px;
+	font-family: $df-font;
 }
 #tocomplt-box{
 	margin-left: 1%;
+}
+.cl-lnk{
+	color: $drk-gry;
+	font-size: 15px;
+	margin-left: -15px;
+	font-family: $df-font;
+}
+.takeclass{
+	color: $hlite;
+	font-size: 20px;
+	font-family: $df-font;
 }

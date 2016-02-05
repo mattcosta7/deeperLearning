@@ -1,9 +1,11 @@
-<div id="user-content-box" class="col-md-12">
-  <h2 class="col-md-12"><span id="wel-name">Welcome, </span><span id="username"><%=@user.name%></span></h2>
+<div id="topbox" class="col-md-3">
+  <h2><span id="wel-name">Welcome, </span><span id="username"><%=@user.name%></span></h2>
   <%= link_to edit_user_path @user do %>
-  <div class="col-md-12"><%=image_tag(@user.avatar)%></div>
+  <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
   <%end%>
-  <h3 class="col-md-12">
+</div>
+<div id="botbox" class="col-md-5">
+  <h3>
     <% courses = @user.completions.map {|x| Challenge.find(x.completed_id).course} %>
     <% courses.uniq.each do |course|%>
       <h2><%=link_to course.name, course%></h2>
@@ -21,7 +23,7 @@
       <%end%>
   </div>
   <div id="tocomplt-box">
-        <!-- To Complete: -->
+        <span class="cl-lnk">Continue Learning:</span>
         <% Challenge.all.each do |chal| %>
           <% if !Completion.exists?(completer_id:current_user.id, completed_id: chal.id) %>
             <%=link_to(chal.title, [chal.course,chal], :class => "incomplete")%>
@@ -29,13 +31,14 @@
         <%end%>
         </ul>
       <% else %>
-       <!--  To Complete: -->
+       <span class="cl-lnk">Continue Learning:</span>
         <% Challenge.all.each do |chal| %>
           <% if !Completion.exists?(completer_id:current_user.id, completed_id: chal.id) %>
             <%=link_to(chal.title, [chal.course,chal], :class => "incomplete")%>
           <%end%>
         <%end%>
       <%end%>
-      <%=link_to("Take a class!",courses_path)%>
+      <%=link_to("Take a class!",courses_path, :class => "takeclass")%>
   </div>
 </div>
+
