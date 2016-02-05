@@ -11,48 +11,58 @@
 // about supported directives.
 //
 //= require ace-rails-ap
+//= require ace/theme-tomorrow_night_blue
+//= require ace/mode-javascript
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
 
 $(document).ready(function(){
 
-  // $('#compLink').hide();
-  // editor.getSession().on('change', function () {
-  //     $('#content').val(editor.getSession().getValue().trim());
-  //     if($('#content').val() == document.getElementById('answer').innerHTML){
-  //       $('#compLink').show();
-  //       editor.setReadOnly(true);
-  //     }
+    $('#hint-btn').on('click', function(){
+        $('#hint').show();
+        $('#content-box').scrollTop(600);
+     });
 
-  //  });
+     $('#sgnin-prompt').on('click', function(){
+        $(this).hide();
+        $('#sgnup-prompt').show();
+        $('#signup').hide();
+        $('#signin').show();
+        $('#hashtag').css('margin-top', '54%');
+     });
 
-   // $('#content').val(editor.getSession().getValue().trim());
+     $('#sgnup-prompt').on('click', function(){
+        $(this).hide();
+        $('#sgnin-prompt').show();
+        $('#signin').hide();
+        $('#signup').show();
+        $('#hashtag').css('margin-top', '48%');
+     });
 
-   $('#hint-btn').on('click', function(){
-   		$('#hint').show();
-   		$('#content-box').scrollTop(600);
-   });
-
-   $('#sgnin-prompt').on('click', function(){
-      $(this).hide();
-      $('#sgnup-prompt').show();
-      $('#signup').hide();
-      $('#signin').show();
-      $('#hashtag').css('margin-top', '54%');
-   });
-
-   $('#sgnup-prompt').on('click', function(){
-      $(this).hide();
-      $('#sgnin-prompt').show();
-      $('#signin').hide();
-      $('#signup').show();
-      $('#hashtag').css('margin-top', '48%');
-   });
+  if(editor != undefined){
+    $('#compLink').hide();
+    editor.getSession().on('change', function () {
+    $('#content').val(editor.getSession().getValue().trim());
+    if($('#content').val() == document.getElementById('answer').innerHTML){
+      $('#compLink').show();
+      editor.setReadOnly(true);
+    }
+  });
 
 
+  $('#content').val(editor.getSession().getValue().trim());
+}
+
+
+
+
+  
 
 });
+
+
+   
 
 
 
