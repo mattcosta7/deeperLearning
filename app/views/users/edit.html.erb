@@ -1,6 +1,7 @@
 <h2>Edit User</h2>
 <%= flash[:awesome] if  flash[:awesome] %>
-  <%=image_tag(@user.avatar)%>
+  <%=image_tag(@user.avatar.url(:thumb))%>
+  
 <%= form_for(@user,:html => { :multipart => true } ) do |f| %>
   <%= f.file_field :avatar %>
   <%= f.text_field :name, :placeholder => "Name" %>
