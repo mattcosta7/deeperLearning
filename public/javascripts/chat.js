@@ -8,7 +8,13 @@ $(document).ready(function() {
  
   function setupChannel() {
       chatChannel.join().then(function(channel) {
-          printMessage(username + ' joined the chat.');
+        var mes = chatChannel.getMessages(20);
+        mes.then(function(value){
+          for(var i=0;i<value.length;i++){
+            printMessage(value[i].author+":"+value[i].body);
+          }
+        printMessage(username + ' joined the chat.');
+        })
       });
 
       chatChannel.on('messageAdded', function(message) {
@@ -25,20 +31,22 @@ $(document).ready(function() {
    });
 
   $.post("/tokens", function(data) {
-  username = data.username;
-  var accessManager = new Twilio.AccessManager(data.token);
-  var messagingClient = new Twilio.IPMessaging.Client(accessManager);
-  messagingClient.getChannelByUniqueName('chat').then(function(channel) {
+    username = data.username;
+    var accessManager = new Twilio.AccessManager(data.token);
+    var messagingClient = new Twilio.IPMessaging.Client(accessManager);
+    messagingClient.getChannelByUniqueName(window.location.pathname).then(function(channel) {
       if (channel) {
         chatChannel = channel;
         setupChannel();
-      } else {
+      } 
+      else {
         messagingClient.createChannel({
-            uniqueName: 'chat',
-            friendlyName: 'Chat Channel' })
-        .then(function(channel) {
-            chatChannel = channel;
-            setupChannel();
+          uniqueName: window.location.pathname,
+          friendlyName: window.location.pathname 
+        })
+        .then(function(channel){
+          chatChannel = channel;
+          setupChannel();
         });
       }
     });
