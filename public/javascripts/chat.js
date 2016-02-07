@@ -1,57 +1,71 @@
+//function that appends a new message to the window
 function printMessage(author,message) {
   $('#messages').append(author +":"+message+ "<br>");
 }
 
 $(document).ready(function() {
+//defines variables
   var chatChannel;
   var username;
  
+//function that joins a specified channel, 
+//gets the last 20 messages in that channel
+//prints them to the display
+//then appends that a user has logged in, when a new user logs in
+//listens for new messages then adds author and message when added
   function setupChannel() {
-      chatChannel.join().then(function(channel) {
-        var mes = chatChannel.getMessages(20);
-        mes.then(function(value){
-          for(var i=0;i<value.length;i++){
-            printMessage(value[i].author,value[i].body);
-          }
-        $('#messages').append(username + " joined the chat.<br>");
-        })
-      });
-
-      chatChannel.on('messageAdded', function(message) {
-          printMessage(message.author,message.body);
-       });
+    chatChannel.join().then(function(channel) {
+      var mes = chatChannel.getMessages(20);
+      mes.then(function(value){
+        for(var i=0;i<value.length;i++){
+          printMessage(value[i].author,value[i].body);
+        }
+      $('#messages').append(username + " joined the chat.<br>");
+      })
+    });
+    chatChannel.on('messageAdded', function(message) {
+        printMessage(message.author,message.body);
+     });
   }
  
-  var $input = $('#chat-input'); 
-  $input.on('keydown', function(e) {
-      if (e.keyCode == 13) {
-          chatChannel.sendMessage($input.val())
-          $input.val('');
-      }
-   });
+//listens for keydowns, then on enter keypress sends the message
+  $('#chat-input').on('keydown', function(e) {
+    if(e.keyCode == 13) {
+      chatChannel.sendMessage($('#chat-input').val())
+      $('#chat-input').val('');
+    }
+  });
 
+//sends an ajax post to tokens (the tokens#create method on the rails server)
+//sets username based on the username passed in from te controller
+//sets up access by passing the Twilio.AccessManager the token
+//makes a new Messaging client based on the access received.
+//gets a channel by the name of the path, setting that channel if it exists
+//or creating a new one if it doesn't.
+//
   $.post("/tokens", function(data) {
     username = data.username;
     var accessManager = new Twilio.AccessManager(data.token);
     var messagingClient = new Twilio.IPMessaging.Client(accessManager);
-    messagingClient.getChannelByUniqueName(window.location.pathname).then(function(channel) {
-      if (channel) {
+    messagingClient.getChannelByUniqueName(window.location.pathname).then(function(channel){
+      if(channel){
         chatChannel = channel;
         setupChannel();
       } 
-      else {
+      else{
         messagingClient.createChannel({
           uniqueName: window.location.pathname,
           friendlyName: window.location.pathname 
         })
-        .then(function(channel){
-          chatChannel = channel;
-          setupChannel();
-        });
+      .then(function(channel){
+        chatChannel = channel;
+        setupChannel();
+      });
       }
     });
   });
 
+//onload hides the messenger, and toggles via slideDown when clicking the button
   $('.twilioMessenger').hide();
   $('#showHideMessenger').on('click',function(){
     $('.twilioMessenger').slideToggle(500);
