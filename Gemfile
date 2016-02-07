@@ -31,7 +31,8 @@ gem 'carrierwave'
 gem "mini_magick"
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'twilio-ruby'
+gem 'envyable'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

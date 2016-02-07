@@ -1,3 +1,6 @@
+  <%= javascript_include_tag 'http://media.twiliocdn.com/sdk/rtc/js/ip-messaging/v0.8/twilio-ip-messaging.min.js' %> 
+  <%= javascript_include_tag 'chat.js' %>
+
 <div class='wrap'>
 
   <div id="content-box" class="col-md-4">
@@ -35,7 +38,16 @@
 <%=form_tag do %>
   <%=hidden_field_tag(:checkAnswer, "", :id => "content")%>
 <%end%>
-    
+<% if current_user %>
+  <div class='twilioMessenger'>
+    <div class="row">
+     <div class="col-md-8">
+       <div id="messages"></div>
+       <input id="chat-input" class="form-control" type="text" placeholder="say anything" autofocus/>
+     </div>
+    </div>
+  </div>
+<%end%> 
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/tomorrow_night_blue");
