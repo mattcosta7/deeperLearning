@@ -48,3 +48,14 @@
 .cword{
     color: #AFDFFF;
 }
+
+#twilioMessenger { 
+    position:relative; 
+    left:-13px;
+}
+
+#messages{
+        height: 300px; 
+    overflow: scroll; 
+    border: 1px solid #ddd;
+}
