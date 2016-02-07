@@ -1,5 +1,5 @@
-function printMessage(message) {
-  $('#messages').append(message + "<br>");
+function printMessage(author,message) {
+  $('#messages').append(author +":"+message+ "<br>");
 }
 
 $(document).ready(function() {
@@ -11,14 +11,14 @@ $(document).ready(function() {
         var mes = chatChannel.getMessages(20);
         mes.then(function(value){
           for(var i=0;i<value.length;i++){
-            printMessage(value[i].author+":"+value[i].body);
+            printMessage(value[i].author,value[i].body);
           }
-        printMessage(username + ' joined the chat.');
+        $('#messages').append(username + " joined the chat.<br>");
         })
       });
 
       chatChannel.on('messageAdded', function(message) {
-          printMessage(message.author + ": " + message.body);
+          printMessage(message.author,message.body);
        });
   }
  
