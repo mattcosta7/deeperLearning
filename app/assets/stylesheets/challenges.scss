@@ -22,7 +22,7 @@
   visibility: hidden;
 }
 #content-box{
-    height: 600px;
+    height: 608px;
     overflow: scroll;
     margin-left: 3%;
     background: #767F91;
@@ -55,7 +55,16 @@
 }
 
 #messages{
-        height: 300px; 
-    overflow: scroll; 
+    height: 150px;
+    overflow: scroll;
     border: 1px solid #ddd;
+    width: 750px;
+    position: relative;
+    left: -15px;
+}
+
+#chat-input{
+    position: relative;
+    left: -15px;
+    width: 750px;
 }

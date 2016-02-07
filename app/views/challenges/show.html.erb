@@ -41,11 +41,12 @@
 <%end%>
 
 <% if current_user %>
-  <div>
+  <div class='messengerWindow'>
+    <button id='showHideMessenger' class='showHide'>Messenger</button>
     <div class="row">
      <div class="twilioMessenger col-md-6">
        <div id="messages"></div>
-       <input id="chat-input" class="form-control" type="text" placeholder="say anything" autofocus/>
+       <input id="chat-input" class="form-control" type="text" placeholder="Comments or Questions? (Press enter to send)" autofocus/>
      </div>
     </div>
   </div>

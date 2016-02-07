@@ -51,4 +51,11 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('.twilioMessenger').hide();
+  $('#showHideMessenger').on('click',function(){
+    $('.twilioMessenger').slideToggle(500);
+  })
+
+
 });
