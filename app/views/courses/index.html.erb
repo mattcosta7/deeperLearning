@@ -1,6 +1,14 @@
+<h2 class='text-center'>Learn a Language!</h2>
+
 <ul>
 <% @courses.each do |course| %>
-  <li><%=image_tag course.icon.url(:thumb)%>  </li>
-  <li><%=link_to(course.name, course_path(course))%></li>
+  <li>
+    <div class='courseHolder'>
+      <%=link_to course_path course do %>
+      <%=image_tag course.icon.url(:thumb), class: "thumb" %>
+      <h6 class='text-center'><%=course.name%></h6>
+      <%end%>
+    </div>
+  </li>
 <%end%>
 </ul>
