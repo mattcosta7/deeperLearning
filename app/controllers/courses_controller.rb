@@ -41,8 +41,13 @@ class CoursesController < ApplicationController
 
 #sets course and challenges 
   def show
-    @course = Course.find(params[:id])
-    @challenges = @course.challenges
+    if Course.exists?(params[:id])
+      @course = Course.find(params[:id])
+      @challenges = @course.challenges
+    else
+      flash[:notice]="That don't exist, doofus"
+      redirect_to courses_path
+    end
   end
 
 #if user is admin, destroys course, else redirects
