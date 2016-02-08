@@ -2,7 +2,7 @@
 
 //function that appends a new message to the window
 function printMessage(author,message) {
-  $('#messages').append(author +":"+message+ "<br>");
+  $('#messages').append("<a href='/users/"+author+"'>"+author+"</a>:"+message+ "<br>");
 }
 
 $(document).ready(function() {
