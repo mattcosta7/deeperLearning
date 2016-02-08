@@ -1,7 +1,7 @@
 <%= javascript_include_tag 'courses.js' %> 
 <div id="crs-box">
 	<h1 id="crs-name"><%=@course.name%></h1>
-	<h3><%=link_to "Create New Challenge", new_course_challenge_path(@course,@challenge) if current_user.admin %></h3>
+	<h3><%=link_to "Create New Challenge", new_course_challenge_path(@course,@challenge) if current_user && current_user.admin %></h3>
 	<ul>
 	<% @challenges.each do |challenge| %>
 	  <li class="lesson-name"><%=link_to(challenge.title, course_challenge_path(@course, challenge), :class => "lesson-lnk") %></li>

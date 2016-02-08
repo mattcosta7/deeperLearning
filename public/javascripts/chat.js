@@ -18,6 +18,7 @@ $(document).ready(function() {
 //then appends that a user has logged in, when a new user logs in
 //listens for new messages then adds author and message when added
   function setupChannel() {
+    console.log("4a");
     chatChannel.join().then(function(channel) {
       var mes = chatChannel.getMessages(20);
       mes.then(function(value){
@@ -27,7 +28,7 @@ $(document).ready(function() {
       chatChannel.sendMessage("<span class='newMessageBody'>joined the chat.</span></span>");
       var scrollIt = $('#messages')[0].scrollHeight;
       $('#messages').scrollTop(scrollIt);
-      console.log(chatChannel.members.forEach(function(member){console.log(member.identity)}))
+      console.log(chatChannel.members.size)
       })
     });
     chatChannel.on('messageAdded', function(message) {
@@ -70,13 +71,11 @@ $(document).ready(function() {
         setupChannel();
       } 
       else{
+        console.log("1a");
         messagingClient.createChannel({
           uniqueName: window.location.pathname,
           friendlyName: window.location.pathname 
-        }).then(function(channel){
-          chatChannel = channel;
-          setupChannel();
-        });
+        }).then(location.reload());
       }
     });
   });

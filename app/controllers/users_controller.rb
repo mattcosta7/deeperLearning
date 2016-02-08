@@ -26,6 +26,9 @@ class UsersController < ApplicationController
 #preps edit a user form by their name params
   def edit
     @user = User.find_by_name(params[:id])
+    if @user != current_user
+      redirect_to root_path
+    end
   end
 
 #updates a user by newly passed in params, if that's the current user and 
@@ -48,7 +51,12 @@ class UsersController < ApplicationController
 
 #shows a user
   def show
-    @user = User.find_by_name(params[:id])
+    if User.exists?(name:params[:id])
+      @user = User.find_by_name(params[:id])
+    else
+      flash[:notice]="you cray"
+      redirect_to root_path
+    end
   end
 
 

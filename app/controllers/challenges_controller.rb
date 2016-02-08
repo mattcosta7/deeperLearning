@@ -42,7 +42,12 @@ class ChallengesController < ApplicationController
 
 #show a challenge by params id
   def show
-    @challenge = Challenge.find(params[:id])
+    if Challenge.exists?(params[:id])
+      @challenge = Challenge.find(params[:id])
+    else
+      flash[:notice]="You cray"
+      redirect_to root_path
+    end
   end
 
 #destroy a challenge if user is admin, else redirect
