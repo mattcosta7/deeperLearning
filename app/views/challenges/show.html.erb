@@ -1,8 +1,10 @@
+<!--javascript necessary only for the show challenge pages-->
 <%= javascript_include_tag 'editor.js' %>
 <%= javascript_include_tag 'http://media.twiliocdn.com/sdk/rtc/js/ip-messaging/v0.8/twilio-ip-messaging.min.js' %> 
 <%= javascript_include_tag 'chat.js' %>
 
 <div class='wrap'>
+<!--main lecture content-->
   <div id="content-box" class="col-md-4">
     <h3 id="crsname"><%=@challenge.course.name.html_safe%></h3>
     <h4 id="chal-title"><%=@challenge.title.html_safe%></h4>
@@ -17,13 +19,13 @@
     </div>
     <span id='answer'><%=@challenge.answer%></span>
   </div>
-  
+<!--editor appears only if the current user, setup depending on the status of the solution-->
   <% if current_user && !current_user.completions.exists?(completed_id:params[:id]) %>
     <div id="editor"></div>
   <%else%>
     <div id="editor"><%=@challenge.answer if current_user%></div>
   <%end%>
-
+<!--marks completed/next buttons appear only when needed-->
   <% if current_user && !current_user.completions.exists?(completed_id: @challenge.id)%>
     <%=link_to("Mark Completed",completion_path(@challenge), method: :post, id:'compLink',remote:true)%>
   <%end%>
@@ -34,11 +36,11 @@
     <%=link_to("Completed All Courses", user_path(current_user), id: "nextLink") if current_user.completions.exists?(completed_id: @challenge.id) if current_user%>
   <%end%>
 </div>
-
+<!--answer from editor saved to hidden field for checking-->
 <%=form_tag do %>
   <%=hidden_field_tag(:checkAnswer, "", :id => "content")%>
 <%end%>
-
+<!--chat window only if current_user-->
 <% if current_user %>
   <div class='messengerWindow'>
     <button id='showHideMessenger' class='showHide'>Messenger</button>
@@ -50,7 +52,7 @@
     </div>
   </div>
 <%end%> 
-
+<!--editor setup-->
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/tomorrow_night_blue");

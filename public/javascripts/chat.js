@@ -1,3 +1,5 @@
+//https://www.twilio.com/blog/2016/02/add-chat-to-a-rails-app-with-twilio-ip-messaging.html?utm_source=rubyweekly&utm_medium=email
+
 //function that appends a new message to the window
 function printMessage(author,message) {
   $('#messages').append(author +":"+message+ "<br>");
@@ -42,7 +44,6 @@ $(document).ready(function() {
 //makes a new Messaging client based on the access received.
 //gets a channel by the name of the path, setting that channel if it exists
 //or creating a new one if it doesn't.
-//
   $.post("/tokens", function(data) {
     username = data.username;
     var accessManager = new Twilio.AccessManager(data.token);
@@ -56,11 +57,10 @@ $(document).ready(function() {
         messagingClient.createChannel({
           uniqueName: window.location.pathname,
           friendlyName: window.location.pathname 
-        })
-      .then(function(channel){
-        chatChannel = channel;
-        setupChannel();
-      });
+        }).then(function(channel){
+          chatChannel = channel;
+          setupChannel();
+        });
       }
     });
   });
