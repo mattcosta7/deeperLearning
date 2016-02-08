@@ -13,3 +13,5 @@
 
   <%= f.submit "Update Account" %>
 <% end %>
+
+<%= link_to "Delete Account", delete_path(current_user.name) %>

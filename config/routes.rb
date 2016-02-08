@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'delete/:id' => 'users#delete', as: :delete
+  delete 'delete/:id' => 'users#destroy'
   post 'tokens' => 'tokens#create'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

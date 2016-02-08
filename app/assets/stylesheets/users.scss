@@ -23,7 +23,6 @@ button{
 }
 #topbox{
 	height: 340px;
-	margin-bottom: 10px;
 	margin-right: 50%;
 	margin-left: 38%;
 }
@@ -31,11 +30,13 @@ button{
 	background: rgba(191,200,207,0.2);
 	border: 2px solid $drk-gry;
 	border-radius: 2em 2em;
-	margin-left: 26%;
+	margin-left: 28%;
+	margin-top: -15px;
 }
 #wel-name{
 	color: $pop-blue;
 	font-family: 'Permanent Marker';
+	margin-left: -30px; 
 }
 #username{
 	color: $pop-blue;
@@ -61,25 +62,27 @@ progress::-webkit-progress-value{
 	color: $compl !important;
 	font-size: 20px;
 	font-family: $df-font;
+	margin-left: 14px;
 }
 .incomplete{
 	display: block;
 	color: $pop-blue;
 	font-size: 20px;
 	font-family: $df-font;
+	margin-left: 20px;
 }
 #tocomplt-box{
-	margin-left: 3%;
+	margin-left: 4%;
 }
 .cl-lnk{
 	color: $drk-gry;
 	font-size: 15px;
-	margin-left: -15px;
+	margin-left: -8px;
 	font-family: $df-font;
 }
 .takeclass{
 	color: $hlite;
 	font-size: 20px;
 	font-family: $df-font;
-	margin-left: -3%;
+	margin-left: -1%;
 }

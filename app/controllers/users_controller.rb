@@ -55,12 +55,15 @@ class UsersController < ApplicationController
 #destorys a user if they are the current one, and they type their password
   def destroy
     @user = User.find_by_name(params[:id])
-    if current_user == @user && @user.authenticate(params[:user][:password])&& @user.destroy
-      flash[:notice]="you're deleted"
-      redirect_to root_path
-    else
-      flash[:notice]="you're undeleteable"
-      redirect_to :back
+    if current_user == @user && @user.authenticate(params[:user][:password])
+      if @user.destroy
+        flash[:notice]="you're deleted"
+        session.clear
+        redirect_to root_path
+      else
+        flash[:notice]="you're undeleteable"
+        redirect_to :back
+      end
     end
   end
 

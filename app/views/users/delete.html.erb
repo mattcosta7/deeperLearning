@@ -1,0 +1,7 @@
+<h1>Are you sure you want to delete your account?</h1>
+<h2>Please enter your password to confirm deletion.</h2>
+<%= form_for current_user, method: :delete do |f|%>
+	<%= f.password_field :password %>
+	<%= f.password_field :password_confirmation %>
+	<%= f.submit "Delete Account" %>
+<% end %> 
