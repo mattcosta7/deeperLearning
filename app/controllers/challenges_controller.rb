@@ -21,12 +21,11 @@ class ChallengesController < ApplicationController
       @challenge = @course.challenges.build(challenge_params)
       if @challenge.save
         flash[:notice]="Challenge Saved"
+        redirect_to admin_path
       else
         flash[:notice]="Challenge Didn't Save"
+        redirect_to :back
       end
-      redirect_to current_user
-    else
-      redirect_to current_user
     end
   end
 
