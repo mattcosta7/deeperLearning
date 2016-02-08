@@ -11,6 +11,7 @@
 		  <li><%= link_to "Delete", course, method: :delete %></li>
 		  <ul>
 		    <% course.challenges.each do |challenge| %>
+		    	<li><%= link_to "Create a Lesson", new_course_challenge_path(course, challenge) %></li>
 		      <li><%=link_to(challenge.title, course_challenge_path(course, challenge), :class => "courses challs") %></li>
 		      <li><%= link_to("Edit", edit_course_challenge_path(course, challenge))%></li>
 		      <li><%= link_to("Delete", course_challenge_path(course, challenge), method: :delete) %></li>

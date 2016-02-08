@@ -56,7 +56,7 @@ class ChallengesController < ApplicationController
       @challenge = Challenge.find(params[:id])
       if @challenge.destroy
           flash[:notice] = "success, Erin is da best, at being da worstest"
-          redirect_to root_path
+          redirect_to admin_path
       else
         flash[:notice] = "Q: Matt, what did you do wrong? A: Nothing, ever"
         redirect_to course_challenges_path
