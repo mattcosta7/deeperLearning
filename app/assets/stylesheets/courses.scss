@@ -1,12 +1,18 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$pop-blue: #089CFE;
+$compl: #6691AA;
+$drk-navy: #2A2C54;
+$drk-gry: #767F91;
+$lt-gry: #BFC8CF;
+$hlite: #F4F8F9;
+$df-font: 'Poppins';
 
 .thumb{
   height:150px;
   width:150px;
 }
-
 .courseHolder{
   width: 150px
 }
@@ -21,4 +27,66 @@
 }
 .logolnk:hover{
 		text-decoration: none;
+}
+#crs-name{
+	color: $pop-blue;
+	font-family: 'Permanent Marker';
+	font-size: 60px;
+}
+.lesson-name{
+	display: block;
+}
+.lesson-lnk{
+	font-family: $df-font;
+	color: $lt-gry;
+	font-size: 22px;
+}
+#crs-box{
+	width: 30%;
+	height: 600px;
+	margin-left: 7%;
+	padding-top: 16%;
+}
+#jelly{
+	margin-left: 29%;
+	margin-top: -8%;
+}
+#speech{
+	width: 30%;
+	height: 350px;
+	background: $drk-gry;
+	margin-left: 60%;
+	margin-top: -47%;
+	border-radius: 2em 2em;
+	overflow: scroll;
+}
+.desc{
+	padding: 2% 4% 1% 4%;
+	color: $lt-gry;
+	font-family: $df-font;
+	font-size: 25px;
+}
+.hlite{
+	color: $hlite;
+}
+
+// course index page
+
+.course-indx-title{
+	color: $hlite;
+	font-family: 'Permanent Marker';
+	font-size: 35px;
+}
+#crs-content-box{
+	margin-left: 8%;
+}
+.courseHolder{
+	border: 2px solid $lt-gry;
+	border-radius: 1em 1em;
+}
+#crs-nm-lnk{
+	margin-left: 36%;
+}
+.crs-icon{
+	margin-left: 24%;
 }

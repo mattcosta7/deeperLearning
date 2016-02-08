@@ -38,4 +38,11 @@ $(document).ready(function(){
       $('#signup').show();
    });
 
+   // auto scroll courses#show description
+   $("#jelly").effect("bounce", {time:4, distance:250}, 5500);
+   $('#speech').delay(5400);
+   $('#speech').animate({
+      scrollTop: 700}, 30000);
+
 });
+

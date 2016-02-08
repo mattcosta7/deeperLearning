@@ -1,14 +1,16 @@
-<h2 class='text-center'>Learn a Language!</h2>
+<h2 class='text-center course-indx-title'>Learn a Language!</h2>
 
-<ul>
-<% @courses.each do |course| %>
-  <li>
-    <div class='courseHolder'>
-      <%=link_to course_path course do %>
-      <%=image_tag course.icon.url(:thumb), class: "thumb" %>
-      <h6 class='text-center'><%=course.name%></h6>
-      <%end%>
-    </div>
-  </li>
-<%end%>
-</ul>
+<div id="crs-content-box" class="col-md-10">
+	<ul>
+	<% @courses.each do |course| %>
+	  <li>
+	    <div class='courseHolder col-md-3'>
+	      <%=link_to course_path course do %>
+	      <%=image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
+	      <h6 id="crs-nm-lnk"><%=course.name%></h6>
+	      <%end%>
+	    </div>
+	  </li>
+	<%end%>
+	</ul>
+</div>

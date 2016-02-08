@@ -73,7 +73,7 @@ class ChallengesController < ApplicationController
       @challenge = Challenge.find(params[:id])
       if @challenge.update_attributes(challenge_params)
         flash[:notice]= "updated challenge"
-        redirect_to course_challenge_path(@course,@challenge)
+        redirect_to admin_path
       else
         flash[:notice]= "didn't update"
         redirect_to @challenge
