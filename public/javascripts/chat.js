@@ -2,7 +2,9 @@
 
 //function that appends a new message to the window
 function printMessage(author,message) {
-  $('#messages').append("<a href='/users/"+encodeURI(author)+"'>"+author+"</a>:"+message+ "<br>");
+  $('#messages').append("<span class='newMessage'><a href='/users/"+encodeURI(author)+"'>"+author+"</a>:<span class='newMessageBody'>"+message+ "</span></span><br>");
+  var scrollIt = $('#messages')[0].scrollHeight;
+  $('#messages').scrollTop(scrollIt);
 }
 
 $(document).ready(function() {
@@ -22,7 +24,9 @@ $(document).ready(function() {
         for(var i=0;i<value.length;i++){
           printMessage(value[i].author,value[i].body);
         }
-      $('#messages').append("<a href='/users/"+encodeURI(username)+"'>"+username+"</a>" + " joined the chat.<br>");
+      $('#messages').append("<span class='newMessage'><a href='/users/"+encodeURI(username)+"'>"+username+"</a>" + "<span class='newMessageBody'>joined the chat.</span></span><br>");
+      var scrollIt = $('#messages')[0].scrollHeight;
+      $('#messages').scrollTop(scrollIt);
       })
     });
     chatChannel.on('messageAdded', function(message) {
