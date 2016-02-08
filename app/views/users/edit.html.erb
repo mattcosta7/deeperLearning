@@ -1,6 +1,6 @@
 <h2 id="edttitle">Edit User</h2>
 <%= flash[:awesome] if  flash[:awesome] %>
-  <span class="topbox"><%=image_tag(@user.avatar.url(:thumb), :class => "homeimg")%></span>
+  <span class="topbox2"><%=image_tag(@user.avatar.url(:thumb), :class => "homeimg")%></span>
 
 <div class="editfrm col-md-5">  
 	<%= form_for(@user,:html => { :multipart => true }, :class => "form form-horizontal" ) do |f| %>
