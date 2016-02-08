@@ -1,7 +1,26 @@
-<%=@course.name%>
-<%=link_to "Create New Challenge", new_course_challenge_path(@course,@challenge) if current_user.admin %>
-<ul>
-<% @challenges.each do |challenge| %>
-  <li><%=link_to(challenge.title, course_challenge_path(@course, challenge)) %></li>
-<%end%>
-</ul>
+<%= javascript_include_tag 'courses.js' %> 
+<div id="crs-box">
+	<h1 id="crs-name"><%=@course.name%></h1>
+	<h3><%=link_to "Create New Challenge", new_course_challenge_path(@course,@challenge) if current_user.admin %></h3>
+	<ul>
+	<% @challenges.each do |challenge| %>
+	  <li class="lesson-name"><%=link_to(challenge.title, course_challenge_path(@course, challenge), :class => "lesson-lnk") %></li>
+	<%end%>
+	</ul>
+</div>
+<img id="jelly" src="/jelly.png">
+<div id="speech">
+	<p class="desc">
+		Down here in the deep blue, we refer to this coding language as JellyScript.However, you landlubbers may know it as <span class="hlite">Javascript</span>.
+	</p>
+	<p class="desc">
+		<span class="hlite">JavaScript</span> is a powerful object-oriented programming language…
+		<i>…object-what?</i>
+	</p>
+	<p class="desc">
+		Object-oriented programming is a type of language that uses objects, which you create, to store methods and functions that act upon that object. For example, you could make a Fish object(note the capitalization, that will be important for later) and write methods that allow it to swim. You could write a swim left function so the fish can go left, and functions to help the fish swim right, up, down, and any other direction you may want it to go.
+	</p>
+	<p class="desc">
+		But before we start writing functions, we need to learn some basics first!
+	</p>
+</div>

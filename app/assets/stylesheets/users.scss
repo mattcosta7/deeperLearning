@@ -15,8 +15,9 @@ button{
 }
 .homeimg{
 	width: 250px;
-	border: 2px solid white;
+	border: 2px solid $hlite;
 	border-radius: 1em 1em;
+	background: $drk-gry;
 }
 #user-content-box{
 	margin-left: 31%;
