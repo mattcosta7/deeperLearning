@@ -4,7 +4,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   storage :fog
 
   def default_url
-    'default_avatar.jpeg'
+    'axolotldf.png'
   end
 
   def store_dir

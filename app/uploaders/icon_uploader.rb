@@ -8,7 +8,7 @@ class IconUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    'axolotldf.png'
+    'dumbo.png'
   end
 
   version :thumb do
