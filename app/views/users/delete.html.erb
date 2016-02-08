@@ -1,7 +1,12 @@
-<h1>Are you sure you want to delete your account?</h1>
-<h2>Please enter your password to confirm deletion.</h2>
-<%= form_for current_user, method: :delete do |f|%>
-	<%= f.password_field :password %>
-	<%= f.password_field :password_confirmation %>
-	<%= f.submit "Delete Account" %>
-<% end %> 
+<div id="dltbox">
+	<h2 id="dlt-sure">Are you sure you want to delete your account?</h2>
+	<h3 id="confirm-h2">Please enter your password to confirm deletion.</h3>
+
+	<div id="dlt-form" class="col-md-9 form form-horizontal">
+		<%= form_for current_user, method: :delete do |f|%>
+			<%= f.password_field :password, :class => "form-control" %>
+			<%= f.password_field :password_confirmation, :class => "form-control" %>
+			<%= f.submit "Delete Account", :class => "btn btn-warning" %>
+		<% end %> 
+	</div>
+</div>
