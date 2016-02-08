@@ -3,20 +3,25 @@
 <div id="crs-content-box" class="col-md-10">
 	<ul>
 	<% @courses.each do |course| %>
-	  <li>
-	    <div class='courseHolder col-md-3'>
-	    	<% if current_user %>
-		      <%=link_to course_path course do %>
-		      <%=image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
-		      <h6 id="crs-nm-lnk"><%=course.name%></h6>
-	      	<%end%>
-	      <% else %>
-	      	<% @courses.each do |course| %>
-	      		<%= image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
-	      		<h6 id="crs-nm-lnk"><%=course.name%></h6>
-	      	<% end %>
-	      <% end %>
-	    </div>
+	  <li class="crs-indx-li">
+	  	<div id="crsbox col-md-4">
+		    <div class='courseHolder'>
+		    	<% if current_user %>
+			      <%=link_to course_path course do %>
+			      <%=image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
+			      <h6 id="crs-nm-lnk"><%=course.name%></h6>
+		      	<%end%>
+		      <% else %>
+		      	<% @courses.each do |course| %>
+		      		<%= image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
+		      		<h6 id="crs-nm-lnk"><%=course.name%></h6>
+		      	<% end %>
+		      <% end %>
+		    </div>
+		    <div class="si-dropdown">
+		   		<h4 id="please">Please Sign-In to view Courses.</h4>
+		  	</div>
+		  </div>
 	  </li>
 	<%end%>
 	</ul>

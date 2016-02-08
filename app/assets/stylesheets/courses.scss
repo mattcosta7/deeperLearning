@@ -83,6 +83,7 @@ $df-font: 'Poppins';
 .courseHolder{
 	border: 2px solid $lt-gry;
 	border-radius: 1em 1em;
+	width: 21%;
 }
 #crs-nm-lnk{
 	margin-left: 34%;
@@ -91,4 +92,17 @@ $df-font: 'Poppins';
 }
 .crs-icon{
 	margin-left: 24%;
+}
+.crs-indx-li{
+	display: block;
+	color: $lt-gry;
+	font-size: 15px;
+	font-family: $df-font;
+}
+.crsbox{
+	width: 328px;
+	height: 400px;
+}
+.si-dropdown{
+	display: none;
 }
