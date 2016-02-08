@@ -42,12 +42,19 @@ button{
 	color: $pop-blue;
 	font-family: $df-font;
 }
+.coursename{
+	font-family: 'Allerta Stencil';
+	color: $hlite;
+	width: 100%;
+	margin-left: 18%;	
+}
 progress{
 	background-color: $pop-blue;
 	border: 0;
 	height: 15px;
-	width: 250px;
+	width: 450px;
 	border-radius: 9px;
+	margin-left: 15%;
 }
 progress::-webkit-progress-bar{
 	background-color: $lt-gry;
@@ -62,14 +69,15 @@ progress::-webkit-progress-value{
 	color: $compl !important;
 	font-size: 20px;
 	font-family: $df-font;
-	margin-left: 14px;
+	margin-left: 17%;
+	margin-top: 4%;
 }
 .incomplete{
 	display: block;
 	color: $pop-blue;
 	font-size: 20px;
 	font-family: $df-font;
-	margin-left: 20px;
+	margin-left: 29%;
 }
 #tocomplt-box{
 	margin-left: 4%;
@@ -77,7 +85,7 @@ progress::-webkit-progress-value{
 .cl-lnk{
 	color: $drk-gry;
 	font-size: 15px;
-	margin-left: -8px;
+	margin-left: 28%;
 	font-family: $df-font;
 }
 .takeclass{

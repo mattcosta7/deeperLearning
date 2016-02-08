@@ -8,7 +8,7 @@
   <h3>
     <% courses = @user.completions.map {|x| Challenge.find(x.completed_id).course} %>
     <% courses.uniq.each do |course|%>
-      <h2><%=link_to course.name, course%></h2>
+      <h2 class="coursename"><%=link_to(course.name, course, :class => "coursename") %></h2>
       <% comp = @user.completions.map {|com| Course.where(course_id: com.completed.course_id)} %>
       <progress value='<%= comp.length%>' max='<%=course.challenges.length%>'> </progress>
     <%end%>
