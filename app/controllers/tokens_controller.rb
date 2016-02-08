@@ -27,7 +27,11 @@ class TokensController < ApplicationController
     grant
   end
 
-#creates the token, renders json to the twilio api, with username and token
+#creates a token from the twilio api
+#creates a grant from the twilio api
+#appends that grant to the token, then sends json
+#{username: current_user.name, token: token(as a json web token)}
+
   def create
     token = get_token
     grant = get_grant
