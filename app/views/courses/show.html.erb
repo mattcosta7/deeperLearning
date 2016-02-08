@@ -1,5 +1,5 @@
 <%=@course.name%>
-<%=link_to "Create New Challenge", new_course_challenge_path(@course,@challenge) if current_user.admin %>
+<%=link_to "Create New Challenge", new_course_challenge_path(@course,@challenge) if current_user && current_user.admin  %>
 <ul>
 <% @challenges.each do |challenge| %>
   <li><%=link_to(challenge.title, course_challenge_path(@course, challenge)) %></li>

@@ -24,13 +24,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+#in browser editor
 gem 'ace-rails-ap'
 
+#image uploade, amazon aws fog storage, image manip.
 gem 'fog'
 gem 'carrierwave'
 gem "mini_magick"
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+#chat gems, for chat api and environment variable
 gem 'twilio-ruby'
 gem 'envyable'
 # Use Capistrano for deployment
@@ -51,6 +55,7 @@ group :development do
   gem 'spring'
 end
 
+#db for heroku, with heroku gem
 group :production do 
   gem 'pg'
   gem 'rails_12factor'
