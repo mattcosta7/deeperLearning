@@ -24,7 +24,7 @@ $(document).ready(function() {
         for(var i=0;i<value.length;i++){
           printMessage(value[i].author,value[i].body);
         }
-      $('#messages').append("<span class='newMessage'><a href='/users/"+encodeURI(username)+"'>"+username+"</a>" + ":<span class='newMessageBody'>joined the chat.</span></span><br>");
+      chatChannel.sendMessage("<span class='newMessageBody'>joined the chat.</span></span>");
       var scrollIt = $('#messages')[0].scrollHeight;
       $('#messages').scrollTop(scrollIt);
       })
@@ -32,6 +32,12 @@ $(document).ready(function() {
     chatChannel.on('messageAdded', function(message) {
         printMessage(message.author,message.body);
      });
+    chatChannel.on('memberJoined', function(){
+      chatChannel.sendMessage("joined")
+    });
+    chatChannel.on('memberleft', function(){
+      chatChannel.sendMessage("Left")
+    })
   }
  
 //listens for keydowns, then on enter keypress sends the message
@@ -41,6 +47,10 @@ $(document).ready(function() {
       $('#chat-input').val('');
     }
   });
+  
+  $(window).on('unload',function(chatChannel){
+    chatChannel.remove();
+  })
 
 //sends an ajax post to tokens (the tokens#create method on the rails server)
 //sets username based on the username passed in from te controller
