@@ -21,7 +21,7 @@ button{
 #user-content-box{
 	margin-left: 31%;
 }
-#topbox{
+.topbox{
 	height: 340px;
 	margin-right: 50%;
 	margin-left: 38%;
@@ -93,4 +93,42 @@ progress::-webkit-progress-value{
 	font-size: 20px;
 	font-family: $df-font;
 	margin-left: -1%;
+}
+#edttitle{
+	font-family: 'Permanent Marker';
+	color: $lt-gry;
+	margin-left: 41%;
+	font-size: 36px;
+}
+.editfrm{
+	margin-left: 27%;
+	margin-top: 3%;
+}
+.imgup{
+	margin-left: 24%;
+}
+.bday select:nth-child(1){
+  width: 32%;
+ 	height: 35px;
+  text-indent: 15px;
+  margin-bottom: 3%; 
+  background: white;
+}
+.bday select:nth-child(2) {
+  width: 33%;
+  height: 35px;
+  text-indent: 5px;
+  background: white;
+}
+.bday select:nth-child(3) {
+  width: 32%;
+  height: 35px;
+  text-indent: 15px;
+  background: white;
+}
+.dlt{
+	width: 19%;
+}
+.dltlnk{
+	color: white;
 }

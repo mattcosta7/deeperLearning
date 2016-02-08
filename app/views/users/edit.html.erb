@@ -1,17 +1,18 @@
-<h2>Edit User</h2>
+<h2 id="edttitle">Edit User</h2>
 <%= flash[:awesome] if  flash[:awesome] %>
-  <%=image_tag(@user.avatar.url(:thumb))%>
-  
-<%= form_for(@user,:html => { :multipart => true } ) do |f| %>
-  <%= f.file_field :avatar %><br>
-  <%= f.text_field :name, :placeholder => "Name" %><br>
-  <%= f.text_field :email, :placeholder => "Email" %><br>
-  <%= f.text_field :location, :placeholder => "location" %><br>
-  <%= f.date_select :birthday, :placeholder => "birthday" %><br>
-  <%= f.text_area :hobbies, :placeholder => "hobbies" %><br>
-  <%= f.password_field :password, :placeholder => "Password" %><br>
+  <span class="topbox"><%=image_tag(@user.avatar.url(:thumb), :class => "homeimg")%></span>
 
-  <%= f.submit "Update Account" %>
-<% end %>
+<div class="editfrm col-md-5">  
+	<%= form_for(@user,:html => { :multipart => true }, :class => "form form-horizontal" ) do |f| %>
+	  <%= f.file_field :avatar, :class => "btn btn-default imgup" %><br>
+	  <%= f.text_field :name, :placeholder => "Name", :class => "form-control" %><br>
+	  <%= f.text_field :email, :placeholder => "Email", :class => "form-control" %><br>
+	  <%= f.text_field :location, :placeholder => "location", :class => "form-control" %><br>
+	 <span class="bday"><%= f.date_select :birthday, :placeholder => "birthday", :class => "form-control dtpkr" %></span><br>
+	  <%= f.text_area :hobbies, :placeholder => "hobbies", :class => "form-control" %><br>
+	  <%= f.password_field :password, :placeholder => "Password", :class => "form-control" %><br>
 
-<%= link_to "Delete Account", delete_path(current_user.name) %>
+	  <%= f.submit "Update Account", :class => "btn btn-primary" %>
+	<% end %><br>
+	<button class="btn btn-warning dlt"><%= link_to "Delete Account", delete_path(current_user.name), :class => "dltlnk" %></button>
+</div>
