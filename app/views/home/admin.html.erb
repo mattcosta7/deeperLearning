@@ -1,12 +1,20 @@
-<h2>Select a Course: </h2>
-<%=link_to "Create a Course", new_course_path %>
-<%@courses.each do |course|%>
-<ul>
-  <li><%=link_to course.name, course%></li>
-  <ul>
-    <% course.challenges.each do |challenge| %>
-      <li><%=link_to(challenge.title, course_challenge_path(course, challenge)) %></li>
-    <%end%>
-  </ul>
-</ul>
-<%end%>
+<div id="admnbx">
+	<h2 class="head">Select a Course: </h2>
+
+	<%=link_to "Create a Course", new_course_path, :class => "courses" %>
+
+	<div class="courses">
+		<%@courses.each do |course|%>
+		<ul>
+		  <li><%=link_to course.name, course, :class => "courses" %></li>
+		  <li><%= link_to "Delete", course, method: :delete %></li>
+		  <ul>
+		    <% course.challenges.each do |challenge| %>
+		      <li><%=link_to(challenge.title, course_challenge_path(course, challenge), :class => "courses challs") %></li>
+		      <li><%= link_to("Delete", course_challenge_path(course, challenge), method: :delete) %></li>
+		    <%end%>
+		  </ul>
+		</ul>
+		<%end%>
+	</div>
+</div>

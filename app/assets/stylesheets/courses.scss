@@ -69,3 +69,24 @@ $df-font: 'Poppins';
 .hlite{
 	color: $hlite;
 }
+
+// course index page
+
+.course-indx-title{
+	color: $hlite;
+	font-family: 'Permanent Marker';
+	font-size: 35px;
+}
+#crs-content-box{
+	margin-left: 8%;
+}
+.courseHolder{
+	border: 2px solid $lt-gry;
+	border-radius: 1em 1em;
+}
+#crs-nm-lnk{
+	margin-left: 36%;
+}
+.crs-icon{
+	margin-left: 24%;
+}
