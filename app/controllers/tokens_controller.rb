@@ -1,5 +1,10 @@
+#https://www.twilio.com/blog/2016/02/add-chat-to-a-rails-app-with-twilio-ip-messaging.html?utm_source=rubyweekly&utm_medium=email
+
 class TokensController < ApplicationController
 
+#if a current_user is signed in, prep an access token with these 
+#credientials. Set username to current_user.name. Otherwise redirect 
+#to the signin/signup page
   def get_token
     if current_user
       Twilio::Util::AccessToken.new(
@@ -14,6 +19,7 @@ class TokensController < ApplicationController
     end
   end
 
+#gets endpoints from Twilio api.
   def get_grant 
     grant = Twilio::Util::AccessToken::IpMessagingGrant.new 
     grant.endpoint_id = "Chatty:#{current_user.name.gsub(" ", "_")}:browser"
@@ -21,6 +27,7 @@ class TokensController < ApplicationController
     grant
   end
 
+#creates the token, renders json to the twilio api, with username and token
   def create
     token = get_token
     grant = get_grant
