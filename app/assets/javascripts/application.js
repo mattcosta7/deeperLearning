@@ -48,7 +48,7 @@ $(document).ready(function(){
 
    //course index hover dropdown
    $(".courseHolder").on('click', function(){
-      $(".si-dropdown").show();
+      $(".si-dropdown").show(2000);
    });
 
 });
