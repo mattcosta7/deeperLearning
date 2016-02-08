@@ -67,7 +67,7 @@ class CoursesController < ApplicationController
       @course = Course.find(params[:id])
       if @course.update_attributes(course_params)
         flash[:notice]= "Saved"
-        redirect_to @course
+        redirect_to admin_path
       else
         flash[:notice]= "error"
         redirect_to :back
