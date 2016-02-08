@@ -38,11 +38,18 @@ $(document).ready(function(){
       $('#signup').show();
    });
 
-   // auto scroll courses#show description
+   // jellyfish bounce animation
    $("#jelly").effect("bounce", {time:4, distance:250}, 5500);
+
+    // auto scroll courses#show description
    $('#speech').delay(5400);
    $('#speech').animate({
       scrollTop: 700}, 30000);
+
+   //course index hover dropdown
+   $(".courseHolder").on('click', function(){
+      $(".si-dropdown").show(2000);
+   });
 
 });
 
