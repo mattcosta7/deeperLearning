@@ -31,7 +31,7 @@
 		text-decoration: none;
 }
 .bkgd1{
-	background: url("/trenchbkd.png") fixed no-repeat !important;
+	background: url("/trench.png") fixed no-repeat !important;
 	background-size: cover;
 }
 .bkgd2{

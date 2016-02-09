@@ -1,5 +1,5 @@
 <div class="topbox col-md-3">
-  <h2><span id="wel-name">Welcome, </span><span id="username"><%=@user.name%></span></h2>
+  <h2 id="fullname"><span id="wel-name">Welcome, </span><span id="username"><%=@user.name%></span></h2>
   <%= link_to edit_user_path @user do %>
   <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
   <%end%>
