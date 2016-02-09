@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :courses
   before_save :downcase_email
   mount_uploader :avatar, AvatarUploader
+  geocoded_by :location
+  after_validation :geocode
   
   validates :name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
