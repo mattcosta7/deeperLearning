@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 $pop-blue: #089CFE;
-$compl: #6691AA;
+$compl: #86BFE0;
 $drk-navy: #2A2C54;
 $drk-gry: #767F91;
 $lt-gry: #BFC8CF;
@@ -36,7 +36,7 @@ button:focus{
 	margin-left: 44%;
 }
 .indv-box{
-	background: rgba(191,200,207,0.2);
+	background: rgba(191,200,207,0.1);
 	border: 2px solid $drk-gry;
 	border-radius: 2em 2em;
 	margin-bottom: 1%;
@@ -46,10 +46,13 @@ button:focus{
 	margin-top: 1%;
 	margin-bottom: 2%;
 }
+#fullname{
+	width: 250px;
+	text-align: center;
+}
 #wel-name{
 	color: $pop-blue;
 	font-family: 'Permanent Marker';
-	margin-left: -30px; 
 }
 #username{
 	color: $pop-blue;
