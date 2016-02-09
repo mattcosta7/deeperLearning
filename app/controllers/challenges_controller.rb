@@ -43,6 +43,7 @@ class ChallengesController < ApplicationController
   def show
     if Challenge.exists?(params[:id])
       @challenge = Challenge.find(params[:id])
+      @course = Course.find(params[:course_id])
     else
       flash[:notice]="You cray"
       redirect_to root_path
