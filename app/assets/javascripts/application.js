@@ -44,7 +44,7 @@ $(document).ready(function(){
     // auto scroll courses#show description
    $('#speech').delay(5400);
    $('#speech').animate({
-      scrollTop: 700}, 30000);
+      scrollTop: 1100}, 36000);
 
    //course index hover dropdown
    $(".courseHolder").on('click', function(){
