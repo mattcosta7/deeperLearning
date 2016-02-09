@@ -29,8 +29,8 @@
     <%=link_to("Mark Completed",completion_path(@challenge), method: :post, id:'compLink',remote:true)%>
   <%end%>
 
-  <% if current_user && Challenge.exists?(@challenge.id+1) %>
-    <%=link_to("Next Challenge", course_challenge_path(@challenge.course,(@challenge.id + 1)), id: "nextLink") if current_user.completions.exists?(completed_id: @challenge.id)%>
+  <% if current_user && @challenge.next %>
+    <%=link_to("Next Challenge", course_challenge_path(@challenge.course,(@challenge.next)), id: "nextLink") if current_user.completions.exists?(completed_id: @challenge.id)%>
   <%else%>
     <%=link_to("Completed All Courses", user_path(current_user), id: "nextLink") if current_user.completions.exists?(completed_id: @challenge.id) if current_user%>
   <%end%>

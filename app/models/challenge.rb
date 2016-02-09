@@ -12,6 +12,10 @@ class Challenge < ActiveRecord::Base
 
   has_many :completions, foreign_key: :completed_id
   has_many :completers, through: :completions, source: :completer, dependent: :destroy
+
+  def next
+    self.course.challenges.where("id > ?", self.id).first
+  end
 end
 
 
