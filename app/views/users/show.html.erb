@@ -3,35 +3,38 @@
   <%= link_to edit_user_path @user do %>
   <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
   <%end%>
+  <%=link_to("Take a class!",courses_path, :class => "takeclass")%> 
 </div>
 <div id="botbox" class="col-md-5">
     <%=("<h3 class='coursename'>".html_safe+@user.name + " hasn't begun any courses yet</h3>".html_safe)  if @user.completions.length == 0 %>
     <% courses = @user.completions.map {|challenge| challenge.completed.course} %>
     <% courses.uniq.each do |course|%>
+    <div class="indv-box">
       <h2 class="coursename"><%=link_to(course.name, course, :class => "coursename") %></h2>
       <% comple = @user.completions.map {|com| com.completed} %>
       <% completed_courses = comple.collect{|complete| complete.course_id == course.id} %>
       <progress value='<%=completed_courses.count(true)%>' max='<%=course.challenges.length%>'> </progress>
       <div id="complt-box">
-      <span class="cl-lnk">Completed:</span>
-      <% comple.each do |x| %>
-          <ul class="col-md-12">
-            <% if x.course_id == course.id %>
-              <li class="challenge"><%=link_to(x.title, course_challenge_path(x.course,x), :class => "challenge")%></li>
-            <%end%>
+        <span class="cl-lnk">Completed:</span>
+        <ul class="col-md-12">
+          <% comple.each do |x| %>
+             <% if x.course_id == course.id %>
+               <li class="challenge"><%=link_to(x.title, course_challenge_path(x.course,x), :class => "challenge")%></li>
+             <%end%>
           </ul>
-        <%end%>
+          <%end%>
       </div>
       <% if @user == current_user %>
       <div id="tocomplt-box">
         <span class="cl-lnk">Continue Learning:</span>
         <ul>
-        <% course.challenges.each do |challenge| %>
-          <li><%=link_to(challenge.title, [challenge.course,challenge], :class => "incomplete") if !challenge.completers.include?(@user) %></li>
-        <%end%>
+          <% course.challenges.each do |challenge| %>
+            <li><%=link_to(challenge.title, [challenge.course,challenge], :class => "incomplete") if !challenge.completers.include?(@user) %></li>
+          <%end%>
         </ul>
+      </div>
       <%end%>
+      </div>
     <%end%>
- <%=link_to("Take a class!",courses_path, :class => "takeclass")%> 
 </div>
 
