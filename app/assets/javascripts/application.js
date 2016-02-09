@@ -51,5 +51,16 @@ $(document).ready(function(){
       $(".si-dropdown").show(2000);
    });
 
+   $('#compLink').hide();
+   if(editor){
+      editor.getSession().on('change', function () {
+        $('#content').val(editor.getSession().getValue().trim());
+        if(editor.getValue() == atob(document.getElementById('answer').innerHTML)){
+          $('#compLink').show();
+          editor.setReadOnly(true);
+        }
+      });
+      $('#content').val(editor.getSession().getValue().trim());
+   }
 });
 

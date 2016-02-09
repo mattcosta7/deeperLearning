@@ -275,6 +275,7 @@ PLATFORMS
 
 DEPENDENCIES
   ace-rails-ap
+  activesupport
   bcrypt
   byebug
   carrierwave
