@@ -35,12 +35,16 @@ button:focus{
 	margin-right: 50%;
 	margin-left: 44%;
 }
-#botbox{
+.indv-box{
 	background: rgba(191,200,207,0.2);
 	border: 2px solid $drk-gry;
 	border-radius: 2em 2em;
+	margin-bottom: 1%;
+}
+#botbox{
 	margin-left: 28%;
-	margin-top: -15px;
+	margin-top: 1%;
+	margin-bottom: 2%;
 }
 #wel-name{
 	color: $pop-blue;
@@ -100,7 +104,7 @@ progress::-webkit-progress-value{
 	color: $hlite;
 	font-size: 20px;
 	font-family: $df-font;
-	margin-left: -1%;
+	margin-left: 17%;
 }
 #edttitle{
 	font-family: 'Permanent Marker';
