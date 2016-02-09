@@ -13,9 +13,6 @@ $df-font: 'Poppins';
   height:150px;
   width:150px;
 }
-.courseHolder{
-  width: 150px
-}
 .logolnk2{
 	background: -webkit-linear-gradient(#F4F8F9, #089CFE);
   -webkit-background-clip: text;
@@ -78,9 +75,14 @@ $df-font: 'Poppins';
 	font-size: 35px;
 }
 #crs-content-box{
-	margin-left: 8%;
+	margin-left: 30%;
+  margin-top: 2%;
 }
 .courseHolder{
+  width: 150px;
+  float: left;
+  margin-right: 2%;
+  background: 	#262D38;
 	border: 2px solid $lt-gry;
 	border-radius: 1em 1em;
 	width: 21%;
@@ -105,4 +107,8 @@ $df-font: 'Poppins';
 }
 .si-dropdown{
 	display: none;
+}
+#please{
+	display: block;
+	padding-left: 10%;
 }

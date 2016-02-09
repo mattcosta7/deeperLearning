@@ -5,23 +5,25 @@
 	<% @courses.each do |course| %>
 	  <li class="crs-indx-li">
 	  	<div id="crsbox col-md-4">
-		    <div class='courseHolder'>
 		    	<% if current_user %>
 			      <%=link_to course_path course do %>
-			      <%=image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
-			      <h6 id="crs-nm-lnk"><%=course.name%></h6>
+			      	<div class='courseHolder'>
+			      		<%=image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
+			      		<h6 id="crs-nm-lnk"><%=course.name%></h6>
+			      		<div class="si-dropdown">
+		   						<h4 id="please">Please <%= link_to "Sign-In", root_path%> to view Courses.</h4>
+		  					</div>
+			      	</div>
 		      	<%end%>
 		      <% else %>
-		      	<% @courses.each do |course| %>
-		      		<%= image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
-		      		<h6 id="crs-nm-lnk"><%=course.name%></h6>
-		      	<% end %>
+							<div class='courseHolder'>
+			      		<%= image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
+		      			<h6 id="crs-nm-lnk"><%=course.name%></h6>
+		      			<div class="si-dropdown">
+		   						<h4 id="please">Please <%= link_to "Sign-In", root_path%> to view Courses.</h4>
+		  					</div>
+		      		</div>
 		      <% end %>
-		    </div>
-		    <div class="si-dropdown">
-		   		<h4 id="please">Please <%= link_to "Sign-In", root_path%> to view Courses.</h4>
-		  	</div>
-		  </div>
 	  </li>
 	<%end%>
 	</ul>
