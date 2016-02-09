@@ -4,7 +4,7 @@
     <%= link_to edit_user_path @user do %>
     <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
     <%end%>
-    <%=link_to("Take a class!",courses_path, :class => "takeclass")%> 
+    <%=link_to("Take a class!",courses_path, :class => "takeclass")%><br>
   <%else%>
     <h2 id="fullname"><span id="username"><%=@user.name%></span></h2>
     <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
