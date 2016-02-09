@@ -13,6 +13,9 @@ button{
 	background: transparent;
 	border: none;
 }
+button:focus{
+    outline: 0;
+}
 .homeimg{
 	width: 250px;
 	border: 2px solid $hlite;

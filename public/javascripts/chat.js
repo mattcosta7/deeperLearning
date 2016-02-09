@@ -2,7 +2,7 @@
 
 //function that appends a new message to the window
 function printMessage(author,message) {
-  $('#messages').append("<span class='newMessage'><a href='/users/"+encodeURI(author)+"'>"+author+"</a>:<span class='newMessageBody'>"+message+ "</span></span><br>");
+  $('#messages').append("<span class='newMessage'><a class='chat-user' href='/users/"+encodeURI(author)+"'>"+author+"</a>:<span class='newMessageBody'>"+message+ "</span></span><br>");
   var scrollIt = $('#messages')[0].scrollHeight;
   $('#messages').scrollTop(scrollIt);
 }
