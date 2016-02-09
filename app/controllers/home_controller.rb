@@ -18,4 +18,18 @@ class HomeController < ApplicationController
       redirect_to current_user
     end
   end
+
+  def tutor
+    if current_user
+      @users = User.near(current_user.location, 50,:order => "distance")
+      @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+        marker.lat user.latitude
+        marker.lng user.longitude
+        marker.title user.name
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
 end
