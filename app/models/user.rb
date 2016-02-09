@@ -27,6 +27,13 @@ class User < ActiveRecord::Base
     name
   end
   
+  def isSomewhere?
+    if 
+      self.location == "" || self.location == " " || self.location == nil || self.location == false
+    else
+      true
+    end
+  end
 end
 
 #users have secure passwords (confirmed on creation)
