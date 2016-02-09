@@ -21,11 +21,6 @@ class HomeController < ApplicationController
 
   def tutor
     if current_user
-      @current_user_hash = Gmaps4rails.build_markers(current_user) do |user,marker|
-        marker.lat user.latitude
-        marker.lng user.longitude
-        marker.title user.name
-      end
       @users = User.near(current_user.location, 50,:order => "distance")
       @hash = Gmaps4rails.build_markers(@users) do |user, marker|
         marker.lat user.latitude
