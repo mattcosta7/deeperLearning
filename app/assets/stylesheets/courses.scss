@@ -14,7 +14,9 @@ $df-font: 'Poppins';
   width:150px;
 }
 .courseHolder{
-  width: 150px
+  width: 150px;
+  float: left;
+  margin-right: 2%;
 }
 .logolnk2{
 	background: -webkit-linear-gradient(#F4F8F9, #089CFE);
@@ -78,7 +80,8 @@ $df-font: 'Poppins';
 	font-size: 35px;
 }
 #crs-content-box{
-	margin-left: 8%;
+	margin-left: 30%;
+  margin-top: 2%;
 }
 .courseHolder{
 	border: 2px solid $lt-gry;
