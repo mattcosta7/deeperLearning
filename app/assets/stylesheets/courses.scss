@@ -13,11 +13,6 @@ $df-font: 'Poppins';
   height:150px;
   width:150px;
 }
-.courseHolder{
-  width: 150px;
-  float: left;
-  margin-right: 2%;
-}
 .logolnk2{
 	background: -webkit-linear-gradient(#F4F8F9, #089CFE);
   -webkit-background-clip: text;
@@ -84,6 +79,10 @@ $df-font: 'Poppins';
   margin-top: 2%;
 }
 .courseHolder{
+  width: 150px;
+  float: left;
+  margin-right: 2%;
+  background: 	#262D38;
 	border: 2px solid $lt-gry;
 	border-radius: 1em 1em;
 	width: 21%;
