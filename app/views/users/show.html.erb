@@ -5,15 +5,15 @@
   <%end%>
 </div>
 <div id="botbox" class="col-md-5">
-  <h3>
-    <% courses = @user.completions.map {|x| x.completed.course} %>
+    <%=("<h3 class='coursename'>".html_safe+@user.name + " hasn't begun any courses yet</h3>".html_safe)  if @user.completions.length == 0 %>
+    <% courses = @user.completions.map {|challenge| challenge.completed.course} %>
     <% courses.uniq.each do |course|%>
       <h2 class="coursename"><%=link_to(course.name, course, :class => "coursename") %></h2>
       <% comple = @user.completions.map {|com| com.completed} %>
-      <% comp = comple.collect{|x| x.course_id == course.id} %>
-      <progress value='<%=comp.count(true)%>' max='<%=course.challenges.length%>'> </progress>
+      <% completed_courses = comple.collect{|complete| complete.course_id == course.id} %>
+      <progress value='<%=completed_courses.count(true)%>' max='<%=course.challenges.length%>'> </progress>
       <div id="complt-box">
-      Completed:
+      <span class="cl-lnk">Completed:</span>
       <% comple.each do |x| %>
           <ul class="col-md-12">
             <% if x.course_id == course.id %>
@@ -22,26 +22,16 @@
           </ul>
         <%end%>
       </div>
-    <%end%>
-  </h3>
-  
-      
-<div id="tocomplt-box">
-  <!--needs fixin'-->
+      <% if @user == current_user %>
+      <div id="tocomplt-box">
         <span class="cl-lnk">Continue Learning:</span>
-        <% Challenge.all.each do |chal| %>
-          <% if !Completion.exists?(completer_id:current_user.id, completed_id: chal.id) %>
-            <%=link_to(chal.title, [chal.course,chal], :class => "incomplete")%>
-          <%end%>
+        <ul>
+        <% course.challenges.each do |challenge| %>
+          <li><%=link_to(challenge.title, [challenge.course,challenge], :class => "incomplete") if !challenge.completers.include?(@user) %></li>
         <%end%>
         </ul>
-       <span class="cl-lnk">Continue Learning:</span>
-        <% Challenge.all.each do |chal| %>
-          <% if !Completion.exists?(completer_id:current_user.id, completed_id: chal.id) %>
-            <%=link_to(chal.title, [chal.course,chal], :class => "incomplete")%>
-          <%end%>
-        <%end%>
-      <br>
-      <%=link_to("Take a class!",courses_path, :class => "takeclass")%>
-  </div>
+      <%end%>
+    <%end%>
+ <%=link_to("Take a class!",courses_path, :class => "takeclass")%> 
 </div>
+
