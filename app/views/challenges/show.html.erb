@@ -18,6 +18,7 @@
     </div>
     <span id='answer'><%=Base64.encode64(@challenge.answer.html_safe)%></span>
   </div>
+  <%= link_to "Edit Challenge", edit_course_challenge_path(@course, @challenge) if current_user.admin %>
 <!--editor appears only if the current user, setup depending on the status of the solution-->
   <% if current_user && !current_user.completions.exists?(completed_id:params[:id]) %>
     <div id="editor"></div>
