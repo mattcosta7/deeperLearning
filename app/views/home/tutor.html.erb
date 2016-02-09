@@ -27,6 +27,7 @@
 </div>
 </div>
 
+<%=raw @hash.to_json %>
 <script type="text/javascript">
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'user_map'}}, function(){
