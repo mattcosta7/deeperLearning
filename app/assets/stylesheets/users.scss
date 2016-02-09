@@ -13,6 +13,9 @@ button{
 	background: transparent;
 	border: none;
 }
+button:focus{
+    outline: 0;
+}
 .homeimg{
 	width: 250px;
 	border: 2px solid $hlite;
@@ -76,7 +79,6 @@ progress::-webkit-progress-value{
 	font-size: 20px;
 	font-family: $df-font;
 	margin-left: 17%;
-	margin-top: 4%;
 }
 .incomplete{
 	display: block;

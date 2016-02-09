@@ -1,6 +1,14 @@
 // Place all the styles related to the challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$pop-blue: #089CFE;
+$compl: #6691AA;
+$drk-navy: #2A2C54;
+$drk-gry: #767F91;
+$lt-gry: #BFC8CF;
+$hlite: #F4F8F9;
+$df-font: 'Poppins';
+
 
 #editor { 
     position: relative;
@@ -62,6 +70,11 @@
     width: 750px;
     position: relative;
     left: -15px;
+    background: rgba(19,42,71,0.7);
+}
+
+.chat-user{
+    color: $pop-blue;
 }
 
 #chat-input{
@@ -78,5 +91,22 @@
 .newMessageBody{
     position: relative;
     left:3px;
-    color:#389C60;
+    color: $hlite;
+    font-family: $df-font;
+}
+
+#showHideMessenger{
+    color: $hlite;
+    font-size: 20px;
+    font-family: 'Allerta Stencil';
+}
+
+button:focus{
+    outline: 0;
+}
+
+#nextLink{
+    color: $lt-gry;
+    font-size: 16px;
+    font-family: $df-font;
 }
