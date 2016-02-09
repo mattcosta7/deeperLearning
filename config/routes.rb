@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  get 'tutor' => 'home#tutor'
   get 'delete/:id' => 'users#delete', as: :delete
   delete 'delete/:id' => 'users#destroy'
   post 'tokens' => 'tokens#create'
