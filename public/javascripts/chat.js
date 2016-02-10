@@ -1,5 +1,5 @@
 //https://www.twilio.com/blog/2016/02/add-chat-to-a-rails-app-with-twilio-ip-messaging.html?utm_source=rubyweekly&utm_medium=email
-
+//CHAT FUNCTION DUDE!
 //function that appends a new message to the window
 function printMessage(author,message) {
   $('#messages').append("<span class='newMessage'><a class='chat-user' href='/users/"+encodeURI(author)+"'>"+author+"</a>:<span class='newMessageBody'>"+message+ "</span></span><br>");

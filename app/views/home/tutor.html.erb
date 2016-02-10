@@ -26,8 +26,10 @@
     </ul>
 </div>
 </div>
-
-<%=raw @hash.to_json %>
+<!--Maps JS-->
+<!--Builds a new gmap, in user_map, then populates using the JSON hash @hash, placing markers
+    at the points of people who are within 50 miles of the current_user's location
+    positions the map to fit the position around the markers-->
 <script type="text/javascript">
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'user_map'}}, function(){

@@ -42,3 +42,5 @@ end
 #unique email addresses
 #users can complete challenges through a dependent destroyed entry on the completion table
 #user emails are downcased and params of the user are names instead of id numbers
+#users get geolocated positions after validations run (create/updates)
+#isSomewhere function returns true if the user has a location, otherwise false.

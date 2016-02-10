@@ -3,7 +3,7 @@
     <h2 id="fullname"><span id="wel-name">Welcome, </span><span id="username"><%=@user.name%></span></h2>
     <%= link_to edit_user_path @user do %>
     <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
-    <%end%>
+  <%end%>
     <%=link_to("Take a class!",courses_path, :class => "takeclass")%><br>
     <%=link_to("Find a Mentor", tutor_path, :class => "takeclass") if current_user.isSomewhere?%>
     <%=link_to("Add A location to Find a Mentor", edit_user_path(current_user), :class => "takeclass") if current_user == @user && !current_user.isSomewhere?%><br>
