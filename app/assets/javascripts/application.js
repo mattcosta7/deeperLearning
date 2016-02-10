@@ -20,6 +20,22 @@
 //= require_tree .
 
 $(document).ready(function(){
+// flash messages disappear after 10 seconds
+setTimeout(function(){
+  $('#flash_fail').fadeOut('slow');
+},4000);
+setTimeout(function(){
+  $('#flash_success').fadeOut('slow');
+},4000);
+setTimeout(function(){
+  $('#flash_notice').fadeOut('slow');
+},4000);
+setTimeout(function(){
+  $('#flash_awesome').fadeOut('slow');
+},4000);
+setTimeout(function(){
+  $('#flash_miss').fadeOut('slow');
+},4000);
 //hint button opens on click
   $('#hint-btn').on('click', function(){
       $('#hint').show();
@@ -64,5 +80,6 @@ $(document).ready(function(){
       });
       $('#content').val(editor.getSession().getValue().trim());
    }
+
 });
 
