@@ -9,10 +9,7 @@ $lt-gry: #BFC8CF;
 $hlite: #F4F8F9;
 $df-font: 'Poppins';
 
-.thumb{
-  height:150px;
-  width:150px;
-}
+// deeperLearning Logo Styling
 .logolnk2{
 	background: -webkit-linear-gradient(#F4F8F9, #089CFE);
   -webkit-background-clip: text;
@@ -25,6 +22,8 @@ $df-font: 'Poppins';
 .logolnk:hover{
 		text-decoration: none;
 }
+
+// Course Show Styling courses#show
 #crs-name{
 	color: $pop-blue;
 	font-family: 'Permanent Marker';
@@ -44,10 +43,13 @@ $df-font: 'Poppins';
 	margin-left: 7%;
 	padding-top: 16%;
 }
+
+// styling for lesson character images
 #jelly{
 	margin-left: 29%;
 	margin-top: -8%;
 }
+// lesson speech bubble container
 #speech{
 	width: 30%;
 	height: 350px;
@@ -57,6 +59,7 @@ $df-font: 'Poppins';
 	border-radius: 2em 2em;
 	overflow: scroll;
 }
+// lesson speech content
 .desc{
 	padding: 2% 4% 1% 4%;
 	color: $lt-gry;
@@ -67,17 +70,24 @@ $df-font: 'Poppins';
 	color: $hlite;
 }
 
-// course index page
+// Course Index Styling
 
+// image thumbnail styling
+.thumb{
+  height:150px;
+  width:150px;
+}
 .course-indx-title{
 	color: $hlite;
 	font-family: 'Permanent Marker';
 	font-size: 35px;
 }
+// container for all courses
 #crs-content-box{
 	margin-left: 30%;
   margin-top: 2%;
 }
+// individual course container
 .courseHolder{
   width: 150px;
   float: left;
@@ -101,10 +111,12 @@ $df-font: 'Poppins';
 	font-size: 15px;
 	font-family: $df-font;
 }
-.crsbox{
-	width: 328px;
-	height: 400px;
-}
+// .crsbox{
+// 	width: 328px;
+// 	height: 400px;
+// }
+
+// dropdown for when users are not signed in
 .si-dropdown{
 	display: none;
 }
