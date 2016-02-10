@@ -16,7 +16,7 @@
     <h2 id="fullname"><span id="username"><%=@user.name%></span></h2>
     <h5 class='takeclass2'><%="Located: " + @user.location if @user.isSomewhere?%></h5>
     <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
-    <a href="mailto:<%=@user.email%>" class='emailUser'>Email <%=@user.name%></a>
+    <a href="mailto:<%=@user.email%>" class='emailUser'>Email <%=@user.name%></a><br>
     <%=link_to("Take a class!",courses_path, :class => "takeclass2")%> 
   <%end%><br>
 </div>
