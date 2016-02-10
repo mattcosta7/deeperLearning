@@ -27,7 +27,6 @@ $(document).ready(function() {
       chatChannel.sendMessage("<span class='newMessageBody'>joined the chat.</span></span>");
       var scrollIt = $('#messages')[0].scrollHeight;
       $('#messages').scrollTop(scrollIt);
-      console.log(chatChannel.members.size)
       })
     });
     chatChannel.on('messageAdded', function(message) {
