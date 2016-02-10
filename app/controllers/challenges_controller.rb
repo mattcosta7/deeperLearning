@@ -20,10 +20,10 @@ class ChallengesController < ApplicationController
       @course = Course.find(params[:course_id])
       @challenge = @course.challenges.build(challenge_params)
       if @challenge.save
-        flash[:notice]="Challenge Saved"
+        flash[:success] = "Wahoo! You've successfully created a challenge."
         redirect_to admin_path
       else
-        flash[:notice]="Challenge Didn't Save"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to :back
       end
     end
@@ -45,7 +45,7 @@ class ChallengesController < ApplicationController
       @challenge = Challenge.find(params[:id])
       @course = Course.find(params[:course_id])
     else
-      flash[:notice]="You cray"
+      flash[:notice]="This should not be seen."
       redirect_to root_path
     end
   end
@@ -55,10 +55,10 @@ class ChallengesController < ApplicationController
     if current_user.admin
       @challenge = Challenge.find(params[:id])
       if @challenge.destroy
-          flash[:notice] = "success, Erin is da best, at being da worstest"
+          flash[:success] = "Wahoo! You've successfully created a challenge."
           redirect_to admin_path
       else
-        flash[:notice] = "Q: Matt, what did you do wrong? A: Nothing, ever"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to course_challenges_path
       end
     else
@@ -72,10 +72,10 @@ class ChallengesController < ApplicationController
       @course = Course.find(params[:course_id])
       @challenge = Challenge.find(params[:id])
       if @challenge.update_attributes(challenge_params)
-        flash[:notice]= "updated challenge"
+        flash[:success] = "Wahoo! You've successfully updated a challenge."
         redirect_to admin_path
       else
-        flash[:notice]= "didn't update"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to @challenge
       end
     else

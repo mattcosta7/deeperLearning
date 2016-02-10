@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
     @user = User.where(email: params[:session][:email]).first
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:notice] = "Signed in"
+     flash[:success] = "Wahoo! You've successfully signed in."
       if(@user.birthday == nil || @user.hobbies == nil || @user.location == nil)
-        flash[:awesome]="Fill Out Some Info, so we can better assist you in your Bogus Journey"
+        flash[:tell]="Hi #{@user.name}! Tell me more about yourself!"
         redirect_to edit_user_path(@user)
       else
         redirect_to user_path(@user)
       end
     else
-      flash[:notice] = "Sign In Failed"
+      flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
       redirect_to :back
     end
   end

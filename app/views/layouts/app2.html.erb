@@ -11,8 +11,28 @@
 </head>
 <body class="bkgd2">
 
-		<%= flash[:notice] if flash[:notice] %>
+<% if flash[:notice] -%>
+	<div id="flash_notice"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:miss] -%>
+	<div id="flash_miss"><%= flash[:miss] %></div>
+<% end %>
+
+<% if flash[:awesome] -%>
+	<div id="flash_awesome"><%= flash[:awesome] %></div>
+<% end %>
+
+<% if flash[:fail] -%>
+	<div id="flash_fail"><%= flash[:fail] %></div>
+<% end %>
+
+<% if flash[:success] -%>
+	<div id="flash_success"><%= flash[:success] %></div>
+<% end %>
+
 <%= yield %>
+
 
 </body>
 </html>
