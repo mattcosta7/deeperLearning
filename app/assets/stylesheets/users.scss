@@ -71,7 +71,9 @@ button:focus{
 	color: $hlite;
 	font-size: 20px;
 	font-family: $df-font;
-	margin-top: -6%;
+	margin-top: -2%;
+	text-align: center;
+	width: 250px;
 }
 // only shown when not current user
 .emailUser{
