@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+
 #all users set to @users
   def index
-    @users = User.all
+    redirect_to root_path
   end
 
 #sets a new user up

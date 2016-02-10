@@ -1,5 +1,5 @@
 //https://www.twilio.com/blog/2016/02/add-chat-to-a-rails-app-with-twilio-ip-messaging.html?utm_source=rubyweekly&utm_medium=email
-
+//CHAT FUNCTION DUDE!
 //function that appends a new message to the window
 function printMessage(author,message) {
   $('#messages').append("<span class='newMessage'><a class='chat-user' href='/users/"+encodeURI(author)+"'>"+author+"</a>:<span class='newMessageBody'>"+message+ "</span></span><br>");
@@ -27,7 +27,6 @@ $(document).ready(function() {
       chatChannel.sendMessage("<span class='newMessageBody'>joined the chat.</span></span>");
       var scrollIt = $('#messages')[0].scrollHeight;
       $('#messages').scrollTop(scrollIt);
-      console.log(chatChannel.members.size)
       })
     });
     chatChannel.on('messageAdded', function(message) {
@@ -78,7 +77,7 @@ $(document).ready(function() {
     });
   });
 
-//onload hides the messenger, and toggles via slideDown when clicking the button
+//on page load hides the messenger, and toggles via slideDown when clicking the button
   $('.twilioMessenger').hide();
   $('#showHideMessenger').on('click',function(){
     $('.twilioMessenger').slideToggle(500);

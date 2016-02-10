@@ -16,6 +16,7 @@
       <button id="hint-btn" class="btn btn-primary">Hint</button>
       <h5><%= @challenge.hints.html_safe%></h5>
     </div>
+    <!--encoded answer-->
     <span id='answer'><%=Base64.encode64(@challenge.answer.html_safe)%></span>
   </div>
   <%= link_to "Edit Challenge", edit_course_challenge_path(@course, @challenge) if current_user.admin %>
