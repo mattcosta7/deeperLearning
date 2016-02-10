@@ -11,8 +11,7 @@
     <a href="mailto:<%=@user.email%>" class='emailUser'>Email <%=@user.name%></a>
     <%=link_to("Take a class!",courses_path, :class => "takeclass2")%> 
   <%end%><br>
-  <%=current_user.location%>
-<%=link_to("Find a Mentor", tutor_path, :class => "takeclass") if current_user.isSomewhere?%>
+<%=link_to("Find a Mentor", tutor_path, :class => "mentor") if current_user.isSomewhere?%>
 <%=link_to("Add A location to Find a Mentor", edit_user_path(current_user), :class => "takeclass") if current_user == @user && !current_user.isSomewhere?%>
 </div>
 <div id="botbox" class="col-md-5">
