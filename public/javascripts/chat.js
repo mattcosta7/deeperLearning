@@ -77,7 +77,7 @@ $(document).ready(function() {
     });
   });
 
-//onload hides the messenger, and toggles via slideDown when clicking the button
+//on page load hides the messenger, and toggles via slideDown when clicking the button
   $('.twilioMessenger').hide();
   $('#showHideMessenger').on('click',function(){
     $('.twilioMessenger').slideToggle(500);

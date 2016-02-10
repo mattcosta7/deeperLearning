@@ -19,6 +19,8 @@ class HomeController < ApplicationController
     end
   end
 
+#find a mentor page, if current_user then they an view people near their location
+#markers hash gets built for each of these users, to place markers in google maps
   def tutor
     if current_user
       @users = User.near(current_user.location, 50,:order => "distance")

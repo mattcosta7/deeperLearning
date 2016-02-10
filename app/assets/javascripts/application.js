@@ -53,6 +53,8 @@ $(document).ready(function(){
       $(".si-dropdown").show(2000);
    });
 
+//hides the completed link on load, then shows if the editor value equals the decoded value
+//of the answer. When the answer is correct the editor gets locked.
    $('#compLink').hide();
    if(editor){
       editor.getSession().on('change', function () {
