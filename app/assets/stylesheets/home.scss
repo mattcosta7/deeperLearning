@@ -84,7 +84,10 @@ $hlite: #F4F8F9;
 	padding-top: 17px;
 float: left;
 }
-#hashtag{
+a.hashtag{
+	margin-top: -15%;
+}
+.hashtag{
 	font-size: 35px;
 	color: $hlite;
 	font-family: "Permanent Marker";
