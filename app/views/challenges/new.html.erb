@@ -1,7 +1,7 @@
+<!--create a challenge form, passes course and challenge-->
 <div id="chall-container">
 	<h2>Create a Challenge</h2>
 	  <h3><%=@challenge.course.name%></h3>
-
 	<div class="col-md-6">
 	<%=form_for([@course,@challenge], :class => "form") do |f| %>
 	  <%=f.text_field :title, placeholder: "title", :class => "chall-form"%>

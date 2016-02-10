@@ -1,3 +1,5 @@
+<!--for all courses, list them as clickable links, else without link, but with link_to signin-->
+
 <h2 class='text-center course-indx-title'>Learn a Language!</h2>
 
 <div id="crs-content-box" class="col-md-10">
@@ -5,25 +7,23 @@
 	<% @courses.each do |course| %>
 	  <li class="crs-indx-li">
 	  	<div id="crsbox col-md-4">
-		    	<% if current_user %>
-			      <%=link_to course_path course do %>
-			      	<div class='courseHolder'>
-			      		<%=image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
-			      		<h6 id="crs-nm-lnk"><%=course.name%></h6>
-			      		<div class="si-dropdown">
-		   						<h4 id="please">Please <%= link_to "Sign-In", root_path%> to view Courses.</h4>
-		  					</div>
-			      	</div>
-		      	<%end%>
-		      <% else %>
-							<div class='courseHolder'>
-			      		<%= image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
-		      			<h6 id="crs-nm-lnk"><%=course.name%></h6>
-		      			<div class="si-dropdown">
-		   						<h4 id="please">Please <%= link_to "Sign-In", root_path%> to view Courses.</h4>
-		  					</div>
-		      		</div>
-		      <% end %>
+	    	<% if current_user %>
+		      <%=link_to course_path course do %>
+		      	<div class='courseHolder'>
+		      		<%=image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
+		      		<h6 id="crs-nm-lnk"><%=course.name%></h6>
+		      	</div>
+	      	<%end%>
+	      <% else %>
+					<div class='courseHolder'>
+	      		<%= image_tag course.icon.url(:thumb), class: "thumb crs-icon" %>
+      			<h6 id="crs-nm-lnk"><%=course.name%></h6>
+      			<div class="si-dropdown">
+   						<h4 id="please">Please <%= link_to "Sign-In", root_path%> to view Courses.</h4>
+  					</div>
+      		</div>
+	      <% end %>
+		  </div>
 	  </li>
 	<%end%>
 	</ul>
