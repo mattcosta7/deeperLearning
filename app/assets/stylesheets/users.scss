@@ -68,9 +68,9 @@ progress{
 	background-color: $pop-blue;
 	border: 0;
 	height: 15px;
-	width: 450px;
+	width: 80%;
 	border-radius: 9px;
-	margin-left: 15%;
+	margin-left: 10%;
 }
 progress::-webkit-progress-bar{
 	background-color: $lt-gry;
@@ -180,4 +180,8 @@ progress::-webkit-progress-value{
 }
 #confirm-h2{
 	color: $lt-gry;
+}
+#sad{
+	margin-left: 10%;
+	margin-top: -8%;
 }
