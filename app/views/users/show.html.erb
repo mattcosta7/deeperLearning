@@ -3,6 +3,7 @@
   <% if current_user == @user %>
     <!--welcomes the user if they're the current one-->
     <h2 id="fullname"><span id="wel-name">Welcome, </span><span id="username"><%=@user.name%></span></h2>
+    <h5 class='takeclass2'><%="Located: " + @user.location if @user.isSomewhere?%></h5>
     <%= link_to edit_user_path @user do %>
       <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
     <%end%>
@@ -13,11 +14,11 @@
   <%else%>
     <!--if not current user, then just display stuffs-->
     <h2 id="fullname"><span id="username"><%=@user.name%></span></h2>
+    <h5 class='takeclass2'><%="Located: " + @user.location if @user.isSomewhere?%></h5>
     <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
     <a href="mailto:<%=@user.email%>" class='emailUser'>Email <%=@user.name%></a>
     <%=link_to("Take a class!",courses_path, :class => "takeclass2")%> 
   <%end%><br>
-  <h5 class='takeclass2'><%="Located: " + @user.location if @user.isSomewhere?%></h5>
 </div>
 <div class='row'>
 </div>
