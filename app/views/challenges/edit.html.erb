@@ -1,5 +1,7 @@
+<!--form to edit a challenge-->
+
 <h2>Edit a Challenge</h2>
-  <h3><%=@challenge.course.name%></h3>
+<h3><%=@challenge.course.name%></h3>
 
 <%=form_for([@course,@challenge]) do |f| %>
   <%=f.text_field :title, placeholder: "title"%>

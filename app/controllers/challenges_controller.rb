@@ -1,7 +1,7 @@
 class ChallengesController < ApplicationController
   
   def index
-    @challenges = Challenge.all
+    redirect_to course_path(params[:course_id])
   end
 
 # if current user is admin, then create challenges, otherwise redirect
