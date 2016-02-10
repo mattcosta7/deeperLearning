@@ -14,12 +14,12 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.save
-        flash[:alert] = "Erin is not remotely better than Matt."
+        flash[:success] = "Wahoo! You've successfully created an account"
         session[:user_id] = @user.id
         flash[:awesome]="Fill Out Some Info, so we can better assist you in your Epic Adventure"
         redirect_to edit_user_path(@user)
       else
-        flash[:alert] = "Erin is a failure!"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to :back
       end
   end
@@ -38,14 +38,14 @@ class UsersController < ApplicationController
     @user = User.find_by_name(params[:id])
     if @user == current_user && @user.authenticate(params[:user][:password])
       if @user.update_attributes(edit_params)
-        flash[:notice]="Updated"
+        flash[:success] = "Wahoo! You've successfully updated your account."
         redirect_to @user
       else
-        flash[:notice]="Not happenin"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to :back
       end
     else
-      flash[:notice]="Incorrect Password"
+      flash[:fail] = "Aw, Squid! That's the wrong password."
       redirect_to :back
     end
   end
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     if User.exists?(name:params[:id])
       @user = User.find_by_name(params[:id])
     else
-      flash[:notice]="you cray"
+      flash[:notice]="This should never be seen."
       redirect_to root_path
     end
   end
@@ -66,11 +66,11 @@ class UsersController < ApplicationController
     @user = User.find_by_name(params[:id])
     if current_user == @user && @user.authenticate(params[:user][:password])
       if @user.destroy
-        flash[:notice]="you're deleted"
+        flash[:missyou] = "We hope to seeal you again soon."
         session.clear
         redirect_to root_path
       else
-        flash[:notice]="you're undeleteable"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to :back
       end
     end

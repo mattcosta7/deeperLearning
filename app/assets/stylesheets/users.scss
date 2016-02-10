@@ -68,9 +68,9 @@ progress{
 	background-color: $pop-blue;
 	border: 0;
 	height: 15px;
-	width: 450px;
+	width: 80%;
 	border-radius: 9px;
-	margin-left: 15%;
+	margin-left: 10%;
 }
 progress::-webkit-progress-bar{
 	background-color: $lt-gry;
@@ -104,6 +104,12 @@ progress::-webkit-progress-value{
 	font-family: $df-font;
 }
 .takeclass{
+	color: $hlite;
+	font-size: 20px;
+	font-family: $df-font;
+	margin-left: 17%;
+}
+.mentor{
 	color: $hlite;
 	font-size: 20px;
 	font-family: $df-font;
@@ -174,4 +180,8 @@ progress::-webkit-progress-value{
 }
 #confirm-h2{
 	color: $lt-gry;
+}
+#sad{
+	margin-left: 10%;
+	margin-top: -8%;
 }

@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+$pop-blue: #089CFE;
+$compl: #6691AA;
+$drk-navy: #2A2C54;
+$drk-gry: #767F91;
+$lt-gry: #BFC8CF;
+$hlite: #F4F8F9;
+$df-font: 'Poppins';
+
 #logo{
 	font-family: 'Allerta Stencil';
 }
@@ -37,4 +45,18 @@
 .bkgd2{
 	background: url("/trench.png") fixed no-repeat !important;
 	background-size: cover;
+}
+#flash_notice, #flash_awesome, #flash_success, #flash_fail, #flash_miss{
+	width: 23%;
+	height: 5%;
+	background: $pop-blue;
+	border: 1px solid $hlite;
+	color: $hlite;
+	font-family: $df-font;
+	border-radius: 1em 1em; 
+	position: fixed;
+	top: 95px;
+	left: 29px;
+	text-align: center;
+	padding-top: 1%;
 }

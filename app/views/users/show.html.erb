@@ -17,8 +17,9 @@
     <a href="mailto:<%=@user.email%>" class='emailUser'>Email <%=@user.name%></a>
     <%=link_to("Take a class!",courses_path, :class => "takeclass2")%> 
   <%end%><br>
-  <%=current_user.location%>
+  <h5 class='takeclass2'><%="Located: " + @user.location if @user.isSomewhere?%></h5>
 </div>
+<br>
 <div id="botbox" class="col-md-5">
   <!--displays progress, courses completed, challenges, and that jazz if they've done stuff, else shames them-->
   <%=("<h3 class='coursename'>".html_safe+@user.name + " hasn't begun any courses yet</h3>".html_safe)  if @user.completions.length == 0 %>

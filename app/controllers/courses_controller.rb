@@ -28,10 +28,10 @@ class CoursesController < ApplicationController
     if current_user.admin
       @course = Course.new(course_params)
       if @course.save
-        flash[:notice]= "Saved"
+       flash[:success] = "Wahoo! You've successfully created a new course."
         redirect_to courses_path
       else
-        flash[:notice]= "error"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to :back
       end
     else
@@ -45,7 +45,7 @@ class CoursesController < ApplicationController
       @course = Course.find(params[:id])
       @challenges = @course.challenges
     else
-      flash[:notice]="That don't exist, doofus"
+      flash[:notice]="That doesn't exist, doofus. This should also never be seen."
       redirect_to courses_path
     end
   end
@@ -55,10 +55,10 @@ class CoursesController < ApplicationController
     if current_user.admin
       @course = Course.find(params[:id])
       if @course.destroy
-        flash[:notice]="Destroyed the course.....Duh Erin"
+        flash[:success] = "Wahoo! You've successfully deleted a course."
         redirect_to courses_path
       else
-        flash[:notice]="Fiddled but didn't destroy"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to :back
       end
     else
@@ -71,10 +71,10 @@ class CoursesController < ApplicationController
     if current_user.admin
       @course = Course.find(params[:id])
       if @course.update_attributes(course_params)
-        flash[:notice]= "Saved"
+        flash[:success] = "Wahoo! You've successfully updated your account."
         redirect_to admin_path
       else
-        flash[:notice]= "error"
+        flash[:fail] = "Aw, Squid! Something went wrong. Please try again."
         redirect_to :back
       end
     else
