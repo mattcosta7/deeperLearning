@@ -1,12 +1,16 @@
-<h2>Create a Challenge</h2>
-  <h3><%=@challenge.course.name%></h3>
+<div id="chall-container">
+	<h2>Create a Challenge</h2>
+	  <h3><%=@challenge.course.name%></h3>
 
-<%=form_for([@course,@challenge]) do |f| %>
-  <%=f.text_field :title, placeholder: "title"%>
-  <%=f.text_area :lesson, placeholder: "lesson"%>
-  <%=f.text_area :problem, placeholder: "problem"%>
-  <%=f.text_area :instructions, placeholder: "instructions"%>
-  <%=f.text_area :hints, placeholder: "hints"%>
-  <%=f.text_area :answer, placeholder: "answers"%>
-  <%=f.submit%>
-<%end%>
+	<div class="col-md-6">
+	<%=form_for([@course,@challenge], :class => "form") do |f| %>
+	  <%=f.text_field :title, placeholder: "title", :class => "chall-form"%>
+	  <%=f.text_area :lesson, placeholder: "lesson", :class => "chall-form"%>
+	  <%=f.text_area :problem, placeholder: "problem", :class => "chall-form"%>
+	  <%=f.text_area :instructions, placeholder: "instructions", :class => "chall-form"%>
+	  <%=f.text_area :hints, placeholder: "hints", :class => "chall-form"%>
+	  <%=f.text_area :answer, placeholder: "answers", :class => "chall-form"%>
+	  <%=f.submit, :class => "btn btn-default"%>
+	<%end%>
+	</div>
+</div>
