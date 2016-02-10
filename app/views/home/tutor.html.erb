@@ -10,17 +10,24 @@
 <div id="botbox" style="width:800px;margin: 0 auto">
   <div class="indv-box">
     <ul>
-      <% @users.each do |user| %>
-        <% if user != current_user %>
-          <li class="challenge">
-            <%=link_to(user.name,user)%> is approx. <%=user.distance_to(current_user.location).ceil%> Miles away
-          </li>
+      <% if @users.length == 1 %>
+        <li class="challenge">
+          Drats, no one is close at the moment, but I'm sure we'll have members near you soon!
+        </li>
+      <%else%>
+        <% @users.each do |user| %>
+          <% if user != current_user %>
+            <li class="challenge">
+              <%=link_to(user.name,user)%> is approx. <%=user.distance_to(current_user.location).ceil%> Miles away
+            </li>
+          <%end%>
         <%end%>
       <%end%>
     </ul>
 </div>
 </div>
 
+<%=raw @hash.to_json %>
 <script type="text/javascript">
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'user_map'}}, function(){

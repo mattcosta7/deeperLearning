@@ -18,7 +18,6 @@ $(document).ready(function() {
 //then appends that a user has logged in, when a new user logs in
 //listens for new messages then adds author and message when added
   function setupChannel() {
-    console.log("4a");
     chatChannel.join().then(function(channel) {
       var mes = chatChannel.getMessages(20);
       mes.then(function(value){
@@ -35,12 +34,12 @@ $(document).ready(function() {
         printMessage(message.author,message.body);
      });
     $(window).on('beforeunload',function(channel){
-      chatChannel.sendMessage("left yo");
+      chatChannel.sendMessage("I'm outtie!");
       chatChannel.leave().then(function(channel){
       });
     });
     $(window).on('unload',function(channel){
-      chatChannel.sendMessage("left yo");
+      chatChannel.sendMessage("I'm outtie!");
       chatChannel.leave().then(function(channel){
       });
     });
@@ -71,7 +70,6 @@ $(document).ready(function() {
         setupChannel();
       } 
       else{
-        console.log("1a");
         messagingClient.createChannel({
           uniqueName: window.location.pathname,
           friendlyName: window.location.pathname 
