@@ -21,11 +21,26 @@ $lt-gry: #BFC8CF;
 $hlite: #F4F8F9;
 $df-font: 'Poppins';
 
-#logo{
-	font-family: 'Allerta Stencil';
+
+// Application Layout Styling
+
+
+// background styling for application and app2
+.bkgd1{
+	background: url("/trench.png") fixed no-repeat !important;
+	background-size: cover;
 }
+.bkgd2{
+	background: url("/trench.png") fixed no-repeat !important;
+	background-size: cover;
+}
+// navbar Styling
 .navbar{
 	margin-bottom: 6%;
+}
+// Styling for DeeperLearning Logo
+#logo{
+	font-family: 'Allerta Stencil';
 }
 .logolnk{
 	background: -webkit-linear-gradient(#F4F8F9, #089CFE);
@@ -38,14 +53,8 @@ $df-font: 'Poppins';
 .logolnk:hover{
 		text-decoration: none;
 }
-.bkgd1{
-	background: url("/trench.png") fixed no-repeat !important;
-	background-size: cover;
-}
-.bkgd2{
-	background: url("/trench.png") fixed no-repeat !important;
-	background-size: cover;
-}
+
+// flash notice stylings
 #flash_notice, #flash_awesome, #flash_success, #flash_fail, #flash_miss{
 	width: 23%;
 	height: 5%;
