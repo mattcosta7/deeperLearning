@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// Home#Home Sign/Sign Up Page Styling
+
 // if no current_user //
 $pop-blue: #089CFE;
 $drk-navy: #2A2C54;
@@ -18,6 +20,40 @@ $hlite: #F4F8F9;
   overflow: hidden;
   background-color: #e5e5e5;
 }
+#slogan{
+	color: $lt-gry;
+	font-family: 'Poppins';
+	font-size: 27px;
+	margin-left: 8%;
+	margin-top: 0;
+	margin-bottom: 10%;
+}
+
+// holds angler image
+#col-left{
+	margin-bottom: 10%;
+}
+// angler fish image
+#angler{
+	margin-top: 16%;
+	margin-left: 0;
+	-webkit-transform: rotate(-10deg); 
+  -webkit-transform-origin: 20% 40%; 
+    transform: rotate(-10deg);
+    transform-origin: 20% 40%;
+}
+
+// holds form 
+#col-right{
+	padding: 15px;
+	background: rgba(191,200,207,0.75);
+	border: 2px solid $drk-gry;
+	border-radius: 2em 2em;
+}
+#sgnup-prompt, #sgnin-prompt{
+	font-family: 'Poppins';
+	color: $hlite;
+}
 #signin, #sgnup-prompt{
 	display: none;
 }
@@ -32,41 +68,13 @@ $hlite: #F4F8F9;
 		-0.5px 0.5px $hlite,
 		-0.5px -0.5px $hlite;
 }
-#hashtag{
-	font-size: 35px;
-	color: $hlite;
-	font-family: "Permanent Marker";
-	margin-left: 63%;
-	float: left;
-}
-#slogan{
-	color: $lt-gry;
-	font-family: 'Poppins';
-	font-size: 27px;
-	margin-left: 8%;
-	margin-top: 0;
-	margin-bottom: 10%;
-}
-#sgnup-prompt, #sgnin-prompt{
-	font-family: 'Poppins';
-	color: $hlite;
-}
-#angler{
-	margin-top: 16%;
-	margin-left: 0;
-	-webkit-transform: rotate(-10deg); 
-  -webkit-transform-origin: 20% 40%; 
-    transform: rotate(-10deg);
-    transform-origin: 20% 40%;
-}
-#col-left{
-	margin-bottom: 10%;
-}
-#col-right{
-	padding: 15px;
-	background: rgba(191,200,207,0.75);
-	border: 2px solid $drk-gry;
-	border-radius: 2em 2em;
+
+// footer
+#footer{
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
 }
 .crs-lnk{
 	font-family: 'Poppins';
@@ -76,29 +84,41 @@ $hlite: #F4F8F9;
 	padding-top: 17px;
 float: left;
 }
-#footer{
-	width: 100%;
-	height: 50px;
-	position: absolute;
-	bottom: 0;
+#hashtag{
+	font-size: 35px;
+	color: $hlite;
+	font-family: "Permanent Marker";
+	margin-left: 63%;
+	float: left;
 }
+
+// Admin Home Styling
+
+// container for all admin home content
+#admnbx{
+	margin-left: 40%;
+	padding-top: 20%;
+}
+
+// course box container
 .courses{
 	color: $hlite;	
 	font-size: 25px;
 }
+// select a course header
 .head{
 	color: $pop-blue;
 	font-size: 35px;
 	margin-top: -130px;
 }
-#admnbx{
-	margin-left: 40%;
-	padding-top: 20%;
-}
+// challenge link styilng
 .challs{
 	display: block;
 	color: $lt-gry;
 }
+
+
+// Tutor/Mentor Styling
 .tutorTitle{
 	color: $hlite;
 	font-family: 'Permanent Marker';
@@ -107,3 +127,4 @@ float: left;
 #user_map{
 	margin-left: 46%;
 }
+// additional styling elements can be found in users#show: botbox, indv-box, challenge
