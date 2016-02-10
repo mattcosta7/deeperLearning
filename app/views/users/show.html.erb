@@ -5,6 +5,8 @@
     <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
     <%end%>
     <%=link_to("Take a class!",courses_path, :class => "takeclass")%><br>
+    <%=link_to("Find a Mentor", tutor_path, :class => "takeclass") if current_user.isSomewhere?%>
+    <%=link_to("Add A location to Find a Mentor", edit_user_path(current_user), :class => "takeclass") if current_user == @user && !current_user.isSomewhere?%><br>
   <%else%>
     <h2 id="fullname"><span id="username"><%=@user.name%></span></h2>
     <div><%=image_tag(@user.avatar, :class => "homeimg")%></div>
@@ -12,8 +14,6 @@
     <%=link_to("Take a class!",courses_path, :class => "takeclass2")%> 
   <%end%><br>
   <%=current_user.location%>
-<%=link_to("Find a Mentor", tutor_path, :class => "takeclass") if current_user.isSomewhere?%>
-<%=link_to("Add A location to Find a Mentor", edit_user_path(current_user), :class => "takeclass") if current_user == @user && !current_user.isSomewhere?%>
 </div>
 <div id="botbox" class="col-md-5">
     <%=("<h3 class='coursename'>".html_safe+@user.name + " hasn't begun any courses yet</h3>".html_safe)  if @user.completions.length == 0 %>
