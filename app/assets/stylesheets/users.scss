@@ -67,6 +67,18 @@ button:focus{
 	font-family: $df-font;
 	margin-left: 17%;
 }
+.takeclass2{
+	color: $hlite;
+	font-size: 20px;
+	font-family: $df-font;
+	margin-top: -6%;
+}
+// only shown when not current user
+.emailUser{
+	color: $hlite;
+	font-size: 20px;
+	font-family: $df-font;
+}
 
 // containers for course content
 .indv-box{
@@ -77,7 +89,7 @@ button:focus{
 }
 #botbox{
 	margin-left: 28%;
-	margin-top: 3%;
+	margin-top: 4%;
 	margin-bottom: 2%;
 }
 .coursename{
@@ -191,16 +203,4 @@ progress::-webkit-progress-value{
 #sad{
 	margin-left: 10%;
 	margin-top: -8%;
-}
-
-// User Show Mentors Styling
-.emailUser{
-	color: $hlite;
-	font-size: 20px;
-	font-family: $df-font;
-}
-.takeclass2{
-	color: $hlite;
-	font-size: 20px;
-	font-family: $df-font;
 }
