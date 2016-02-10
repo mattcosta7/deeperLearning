@@ -10,6 +10,7 @@ $hlite: #F4F8F9;
 $df-font: 'Poppins';
 
 
+// CSS for Ace text editor challenges#show
 #editor { 
     position: relative;
     top: 0;
@@ -21,14 +22,14 @@ $df-font: 'Poppins';
     width: 750px;
     border: 3px solid #089CFE;
 }
-
 #answer{
   visibility: hidden;
 }
-
 #content{
   visibility: hidden;
 }
+
+// Lesson Box Styling challenges#show
 #content-box{
     height: 608px;
     overflow: scroll;
@@ -54,15 +55,12 @@ $df-font: 'Poppins';
 ::-webkit-scrollbar{
    display: none;
 }
-.cword{
-    color: #AFDFFF;
-}
 
+// Twilio Messenger Styling challenges#show
 #twilioMessenger { 
     position:relative; 
     left:-13px;
 }
-
 #messages{
     height: 150px;
     overflow: scroll;
@@ -72,57 +70,57 @@ $df-font: 'Poppins';
     left: -15px;
     background: rgba(19,42,71,0.7);
 }
-
 .chat-user{
     color: $pop-blue;
 }
-
 #chat-input{
     position: relative;
     left: -15px;
     width: 750px;
 }
-
 .newMessage{
     position: relative;
     left:3px;
 }
-
 .newMessageBody{
     position: relative;
     left:3px;
     color: $hlite;
     font-family: $df-font;
 }
-
 #showHideMessenger{
     color: $hlite;
     font-size: 20px;
     font-family: 'Allerta Stencil';
 }
 
+// remove blue highlight on button push
 button:focus{
     outline: 0;
 }
 
+// link to next problem after completing current problem
 #nextLink{
     color: $lt-gry;
     font-size: 16px;
     font-family: $df-font;
 }
 
+// styling for characters in Lessn html form
 .var{
     color: #AEA8DB;
 }
-
 .value{
     color: #AEE8FC;
 }
-
 .identifier{
     color: #B8E0B8;
 }
+.cword{
+    color: #AFDFFF;
+}
 
+// Syling for new and edit challenge forms
 .chall-form{
     background-color: white;
     height: 150px;
