@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
 #creates a user with user params
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
       if @user.save
         flash[:success] = "Wahoo! You've successfully created an account"
         session[:user_id] = @user.id
